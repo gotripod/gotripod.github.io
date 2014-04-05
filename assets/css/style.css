@@ -179,6 +179,11 @@ blockquote cite a:visited {
 	color: #555; 
 }
 
+#logo {
+		margin-top: 25px;
+}
+
+
 #footer-global h1 {
 	border-bottom: medium double #666;
 	color: #fff;
@@ -1773,6 +1778,8 @@ nav select {
 		display: none;
 	}
 	
+	#logo img {width:280px;}
+	
 	nav select { 
 		display: inline-block;
 		position: relative;
@@ -1783,7 +1790,10 @@ nav select {
 		font-size: 40px;
 		line-height: 1.2;
 	}
-
+	
+	#uber-content {
+	font-size: 20px !important;
+	line-height: 1.2;
 }
 
 /* Tablet Portrait size to standard 960 (devices and browsers) */
@@ -1802,8 +1812,10 @@ nav select {
 	}
 	
 	#logo {
-		margin-top: 30px;
+		margin-top: 30px;	
 	}
+	
+	#logo img {width:300px;}
 		
 	#introduction p {
 		font-size: 17px;
@@ -1816,6 +1828,12 @@ nav select {
 		margin-top: 110px;
 	}
 	
+	
+	#uber-content {
+	font-size: 18px !important;
+	line-height: 1.2;
+}
+
 	.header-background-image {
 		height: 800px;
 	}
