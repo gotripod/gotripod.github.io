@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>The Go Tripod Blog</title>
+        <meta name="viewport" content="width=device-width">
+
+       <!-- CSS (Stylesheets)
+        ================================================== -->
+    
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/font-awesome.css">
+        
+        <!-- Google Web Fonts
+        ================================================== -->
+        
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Cabin">
+        
+        <!-- Favicons
+        ================================================== -->
+       
+        
+
+    </head>
+    <body>
+
+        <div class="site">
+          <div class="header">
+            <nav id="header-navigation" class="sixteen columns" role="navigation">
+            
+              <ul id="navigation">
+                  <li><a href="index.html#header-global" title="Home">Home</a></li>
+                  <li><a href="index.html#introduction" title="About Us">About Us</a></li>
+                  <li><a href="index.html#latest-work" title="Our Work">Our Work</a></li>
+                  <li><a href="index.html#services" title="Our Services">Our Services</a></li>
+                  <li><a href="index.html#meet-the-team" title="Meet the Team">Meet the team</a></li>
+                <li><a href="#" title="Blog">Blog</a></li>
+                  <li><a href="index.html#contact" title="Contact Us">Contact Us</a></li>
+              </ul>
+              
+              <select name="dropdown" size="1" onChange="scrollTo(this.value)">
+                  <option value="" selected="selected">Navigation</option>
+                  <option value="index.html#header-global">Home</option>
+                  <option value="index.html#introduction">About Us</option>
+                  <option value="index.html#latest-work">Our Work</option> 
+                  <option value="index.html#services">Our Services</option> 
+                  <option value="index.html#meet-the-team">Meet the team</option>
+                  <option value="#">Blog</option>
+                  <option value="index.html#contact">Contact Us</option>
+              </select>
+              
+			</nav><!-- end #header-navigation -->
+          </div>
+		
+        <section id="blog">
+          <div class="container" style="margin-bottom:30px;">
+			
+				<div class="icon-holder intro" style="margin:0 auto;">
+					<i class="icon-book" style="color:#e47c14 !important;"></i>
+				</div>
+			
+          <h2>Problem Solving in Software</h2>
+<p class="meta">30 Oct 2009</p>
+
+<div class="post">
+<p>Very occasionally, people will start asking me in detail what I do for a living. When "I write software" or "I make websites" doesn't satisfy them, I go into a bit more detail about the different aspects of my job. One thing that happens quite regularly if I don't go into <em>enough</em> detail, is that I'll tell someone how long it took to write something, or how much it cost, and they'll raise their eyebrows.</p>
+
+<p>"How can it cost so much?! It's just a website!"</p>
+
+<p>I can see their point. Most websites contain common elements - login, lists, articles, shopping carts, and so on - so you'd think that once you've written one, you'll have the bits and pieces you need to make more. And taken individually, each of these parts are fairly straightforward - a list of products contains some pretty basic HTML, surely? And HTML is just a text file?</p>
+
+<p>And again, that's a fair point. The real time isn't taken in writing these bits and pieces, it's taken in understanding how the customer wants them to be written and how they need to fit together in a certain situation. For example, a shopping cart quickly becomes more complex when the customer adds on a few more features:</p>
+
+<ul>
+<li>Integrates with Google Checkout</li>
+<li>Customers can save carts for later ordering</li>
+<li>Customers can reload past orders into a few cart</li>
+</ul>
+
+<p>But it's not just the cart, it's viewing products too - what if certain customers see custom trade prices? Or products can be assigned to multiple categories and the customer wants to see how many products are in each category next to the category name? All of these things are minor when taking in isolation, but together they are a thousand tiny cuts which bleed development time.</p>
+
+<p>As well as a collection of features, a specification for a website will also discuss requirements in language which is specific to the company you're quoting for. Rather than "cart" you might have "basket". Or you could have "assessors", "reviewers", "investigators", or any other number of terms which a company uses internally and when referencing all of the features they want on their site. <a href="http://domaindrivendesign.org/">Eric Evans talks</a> about the "domain" of a problem when discussing software - not only do you have to appreciate what kind of features are necessary but you have to understand the domain in which they're going to be used, in order to create a solution which fits together correctly.</p>
+
+<p>So software is a whole big bag of questions and clarifications and solutions. From a developer's point of view, it's not just a case of taking some standard components and piecing them together - though that does happen occasionally. Instead every step of the development process is about solving problems, by understanding what the customer wants and by understanding the problem domain. Every day of development sees a developer tackle a new bit of work that needs resolving in a novel way, and that's why making software isn't just a case of shoving some parts together and hoping that it works, but a process, an evolution of the initial ideas.</p>
+
+<p>When clients come to us and ask for software, they'll pitch it by saying "make us a website". But we know that what they really mean is "look, understand, and solve our problem". And that's what we do.</p>
+
+</div>
+
+			
+          </div>
+          </section>
+			
+          <footer id="footer-global" role="contentinfo" class="clearfix">
+	
+		<section id="contact">
+		
+			<div class="container">
+			
+				<div class="row">
+		
+					<div class="sixteen columns">
+					
+						<div class="icon-holder contact">
+							<i class="icon-envelope"></i>
+						</div>
+						
+						<h1>Got a great idea? Lets talk.</h1>
+						
+						<p>Please get in touch with us, we promise we won't bite!</p>
+					
+						<address id="contact-details">
+						
+							<p><a href="mailto:hello@gotripod.com?Subject=Ok, don't bite me! But I would like to talk about ...">hello@gotripod.com</a> // <a href="tel:08454752487">0845 475 2487</a><br />
+							Tremough Innovation Centre, Penryn Campus
+							<br>
+							 Penryn, Cornwall, UK, TR10 9TA</p>
+						
+						</address>
+                        
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d40886.830442687766!2d-5.127996999999958!3d50.17185400000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x486b16307846c97b%3A0x6b783d3b216b6f4d!2sGo+Tripod+Ltd!5e0!3m2!1sen!2s!4v1398110943195" width="100%" height="300" frameborder="0" style="border:0"></iframe>
+                    
+					</div>		
+					
+				</div><!-- end .row -->
+			
+				<div class="row">
+				
+					<div class="sixteen columns">
+					
+						<ul class="social-icons footer">
+						
+							<li><a href="http://www.twitter.com/gotripod" target="_blank" title="go Tripod on Twitter"><img src="assets/img/social-icons/twitter_icon_small.png" width="32" height="32" alt="" /></a></li>
+							<li><a href="http://www.facebook.com/gotripod" target="_blank" title="go Tripod on Facebook"><img src="assets/img/social-icons/facebook_icon_small.png" width="32" height="32" alt="" /></a></li>
+							<li><a href="http://www.linkedin.com/company/go-tripod-ltd" target="_blank" title="Go Tripod on LinkedIn"><img src="assets/img/social-icons/linkedin_icon_small.png" width="32" height="32" alt="" /></a></li>
+							<li><a href="https://plus.google.com/u/0/b/101897321380998049253/101897321380998049253/posts" target="_blank" title="go Tripod on Google +"><img src="assets/img/social-icons/google_plus_icon_small.png" width="32" height="32" alt="" /></a></li>
+							
+						</ul>
+						
+					</div>
+					
+				</div><!-- end .row -->
+		
+				<div class="row">
+		
+					<div class="sixteen columns">
+				  	  
+			  			<p id="copyright-details">&copy; 2014	 Go Tripod.<br>Registered in the UK company number 6912029 VAT No. 972 5228 06</p>
+             		
+			  		</div>
+			  		
+			  	</div><!-- end .row -->	  
+		  	
+			</div><!-- end .container -->
+		
+		</section><!-- end #contact -->
+		
+	</footer><!-- end #footer-global -->
+
+    </body>
+</html>

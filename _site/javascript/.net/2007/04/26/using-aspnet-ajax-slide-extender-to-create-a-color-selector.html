@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>The Go Tripod Blog</title>
+        <meta name="viewport" content="width=device-width">
+
+       <!-- CSS (Stylesheets)
+        ================================================== -->
+    
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/font-awesome.css">
+        
+        <!-- Google Web Fonts
+        ================================================== -->
+        
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Cabin">
+        
+        <!-- Favicons
+        ================================================== -->
+       
+        
+
+    </head>
+    <body>
+
+        <div class="site">
+          <div class="header">
+            <nav id="header-navigation" class="sixteen columns" role="navigation">
+            
+              <ul id="navigation">
+                  <li><a href="index.html#header-global" title="Home">Home</a></li>
+                  <li><a href="index.html#introduction" title="About Us">About Us</a></li>
+                  <li><a href="index.html#latest-work" title="Our Work">Our Work</a></li>
+                  <li><a href="index.html#services" title="Our Services">Our Services</a></li>
+                  <li><a href="index.html#meet-the-team" title="Meet the Team">Meet the team</a></li>
+                <li><a href="#" title="Blog">Blog</a></li>
+                  <li><a href="index.html#contact" title="Contact Us">Contact Us</a></li>
+              </ul>
+              
+              <select name="dropdown" size="1" onChange="scrollTo(this.value)">
+                  <option value="" selected="selected">Navigation</option>
+                  <option value="index.html#header-global">Home</option>
+                  <option value="index.html#introduction">About Us</option>
+                  <option value="index.html#latest-work">Our Work</option> 
+                  <option value="index.html#services">Our Services</option> 
+                  <option value="index.html#meet-the-team">Meet the team</option>
+                  <option value="#">Blog</option>
+                  <option value="index.html#contact">Contact Us</option>
+              </select>
+              
+			</nav><!-- end #header-navigation -->
+          </div>
+		
+        <section id="blog">
+          <div class="container" style="margin-bottom:30px;">
+			
+				<div class="icon-holder intro" style="margin:0 auto;">
+					<i class="icon-book" style="color:#e47c14 !important;"></i>
+				</div>
+			
+          <h2>Using ASP.Net / AJAX slide extender to create a color selector</h2>
+<p class="meta">26 Apr 2007</p>
+
+<div class="post">
+<p>Using the <span class="caps">MS AJAX ASP</span>.Net Extensions and the Ajax Control Toolkit (available through codeplex) You can easily make a colour selector using the Ajax Control Toolkits Slider Extender control.</p>
+
+<p>The Slider Extender included in the Ajax control toolkit renders on the screen as a control that allows the user to click and drag to adjust a numerical value. Out of the box the slider extender is given an <span class="caps">ASP</span>:TextBox as it's Target Control ID, the slider extender automatically hides these textboxes.  We can use three slider controls to create a Red, Green and Blue sliders to set a colour. When working in <span class="caps">RGB</span> we can set a value of 0 to 255 for each of Red, Green or Blue. So the first thing we need is the three sliders on our <span class="caps">HTML</span> page.</p>
+
+<p class="contentbar_header">&nbsp;</p>
+
+<p class="contentbar_body" align="center"><img src="http://farm2.static.flickr.com/1266/1322473907_107fb0f56f_o.jpg" alt="ASP.Net MVC Diagram" /></p>
+
+<p class="contentbar_footer"><span class="caps">ASP</span>.Net <span class="caps">AJAX</span> Slide Extender Color Selector</p>
+
+<p><a id="more"></a><a id="more-19"></a></p>
+
+<p>We need to register the AjaxControlToolkit, so that we can use the slider control, by adding the following line, just below the &lt;% Page %&gt; directive:</p>
+
+<pre line="1" lang="asp">&lt;%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %&gt;</pre>
+
+<p>Then we can add our three Textboxes and sliders:</p>
+
+<pre line="1" lang="asp">
+<table><tbody>
+<tr>
+<td>Red:</td>
+<td><asp:textbox id="txtR" runat="server" cssclass="hide" text="218" onchange="updateslide();"></asp:textbox> <cc1:sliderextender id="SliderExtender1" length="75" minimum="0" raisechangeonlyonmouseup="false" maximum="255" targetcontrolid="txtR" runat="server"></cc1:sliderextender></td>
+</tr>
+<tr>
+<td>Green:</td>
+<td><asp:textbox id="txtG" runat="server" cssclass="hide" text="0" onchange="updateslide();"></asp:textbox> <cc1:sliderextender id="SliderExtender2" length="75" minimum="0" raisechangeonlyonmouseup="false" maximum="255" targetcontrolid="txtG" runat="server"></cc1:sliderextender></td>
+</tr>
+<tr>
+<td>Blue:</td>
+<td><asp:textbox id="txtB" runat="server" cssclass="hide" text="29" onchange="updateslide();"></asp:textbox> <cc1:sliderextender id="SliderExtender3" length="75" minimum="0" raisechangeonlyonmouseup="false" maximum="255" targetcontrolid="txtB" runat="server"></cc1:sliderextender></td>
+</tr>
+</tbody></table>
+</pre>
+
+<p>One way to implement this (if you don’t feel comfortable with Javascript) is to put these control in an update panel and then set the Text Changed event for each of the three text boxes, you could then in .Net change take the values and create a System.Drawing.Color and then use it to set  a control’s back colour to give a preview. This is fine but does not get updated until the user drags and releases the mouse, which makes it a little unhelpful. The slider extender control conveniently also has a property called <strong>RaiseChangeOnlyOnMouseUp</strong> which can be set to false (as in the code above). This will then automatically fire the Text Changed event as the mouse is dragged. However, in testing this proved not to work too well even using a local web server. As each request is sent back with all the viewstate information etc and even though only the update panel is updated we are using a lot of unnecessary bandwidth. So to effectively make this work we need to add a little simple javascript.</p>
+
+<p>If you look at the controls above, I have added an <strong>onchange </strong>event to the textbox controls. Visual Studio complains about me wanting to add real <span class="caps"><span class="caps">HTML</span></span> events, but you can safely ignore the red squigly lines it produces. In the example I have asked each textbox to call a Javascript function called <strong>updateslide()</strong> whenever the text changes. In combination with the RaiseChangeOnlyOnMouseUp setting, this will fire constantly while the user is dragging, but this time without sending network requests, instead to our Javascript function. Before we look at the Javascript, I will add two a textbox and a div to the page. The TextBox control will hold the hex colour values, such as #ff00ff, which is probably the most useful way of using the selected colour. The Div wil be used to preview the colour.</p>
+
+<pre line="1" lang="asp">
+<asp:textbox id="txtHexRGB" width="75px" onkeyup="updatetext(this.value);" runat="server" maxlength="6">da001d</asp:textbox></pre>
+<p>In this example, I have set a default colour of #da001d (Red) and in addition I have added another javascript function to the <strong>onkeyup</strong> event of this Textbox, this allows the user to enter a hex colour code and the preview to be updated. We pass the value of the textbox to the function using the <strong>this.value</strong></p>
+<p>Below is the Java script which can be pasted inline, into your <span class="caps"><span class="caps">ASPX</span></span> page.</p>
+<pre line="1" lang="javascript">
+<script type="text/javascript">
+<!—
+
+function updatetext(hex)
+{
+    var regex = /[a-fA-F0-9]{6}/;
+    if (regex.test(hex) == true){
+        document.getElementById("testDiv").style.backgroundColor = ’#’ + hex;
+    }
+}
+
+function updateslide()
+{
+    // Get R G B values from slider textboxes;
+    var decR = document.getElementById(’<=txtR.ClientID>’).value;
+    var decG = document.getElementById(’<=txtG.ClientID>’).value;
+    var decB = document.getElementById(’<=txtB.ClientID>’).value;
+
+    // converted to hex
+    var hexR = parseInt(decR).toString(16);
+    var hexG = parseInt(decG).toString(16);
+    var hexB = parseInt(decB).toString(16);
+
+    // pad with 0 if needed
+    if (hexR.length < 2) {
+        hexR = "0" + hexR;
+    }
+    if (hexG.length < 2) {
+        hexG = "0" + hexG;
+    }
+    if (hexB.length < 2) {
+        hexB = "0" + hexB;
+    }
+    // Set text box value
+    document.getElementById(’<=txtHexRGB.ClientID>’).value = hexR + hexG + hexB;
+
+    // Set div preview colour
+    document.getElementById("testDiv").style.backgroundColor = ’#’ + hexR + hexG + hexB;
+}
+—>
+</script>
+</pre>
+
+<p>The javascript above includes our two javascript functions. The first updateText(hex) is called when the user types a hexadecimal colour value into the text box we created, the second (updateSlide()) is fired as the user drags any of our three colour sliders. With the updateText(hex) function we pass it the hexadecimal value being entered by the user as they press each key. We first create a regular expression to check we have a valid 6 string hexadecimal value. If the value is valid we apply that hexadecimal value to our preview <span class="caps"><span class="caps">DIV</span></span>’s backgroundColor.</p>
+
+<p>With our second javascript function updateSlide() we do not take a parameter as above, but instead access the value directly in the text boxes. As we do not know what these text boxes ID will be (as they are rendered by <span class="caps"><span class="caps">ASP</span></span>.Net at runtime we can instruct <span class="caps"><span class="caps">ASP</span></span>.Net to inject the names of these <span class="caps"><span class="caps">ASP</span></span>.Net textboxes when the page is rendered using the <font face="Courier New">&lt;<span>=txtR.ClientID</span>&gt;</font> inline code. Having got the numerical values (set by the slider extender) we can go about converting these to hexadecimal by first converting the textbox string to an integer using the Javascript <strong>parseInt </strong>function then using the .<strong>toString(16)</strong> function which converts an int into hexadecimal. With <span class="caps"><span class="caps">HTML</span></span> elements we either need a three character hex string for example fff (which is equivalent to ffffff) or a six character string so the easiest method is to pag and hex values that are only 1 character long with a leading 0. We can then simply update our user textbox with the hex value and set the preview div’s backgroundcolor.</p>
+
+<p>When the page is posted back you can access the <span class="caps"><span class="caps">RGB</span></span> values in the textboxes set be the slider or the hexadecimal value in the textHexRGB textbox.</p>
+
+</div>
+
+			
+          </div>
+          </section>
+			
+          <footer id="footer-global" role="contentinfo" class="clearfix">
+	
+		<section id="contact">
+		
+			<div class="container">
+			
+				<div class="row">
+		
+					<div class="sixteen columns">
+					
+						<div class="icon-holder contact">
+							<i class="icon-envelope"></i>
+						</div>
+						
+						<h1>Got a great idea? Lets talk.</h1>
+						
+						<p>Please get in touch with us, we promise we won't bite!</p>
+					
+						<address id="contact-details">
+						
+							<p><a href="mailto:hello@gotripod.com?Subject=Ok, don't bite me! But I would like to talk about ...">hello@gotripod.com</a> // <a href="tel:08454752487">0845 475 2487</a><br />
+							Tremough Innovation Centre, Penryn Campus
+							<br>
+							 Penryn, Cornwall, UK, TR10 9TA</p>
+						
+						</address>
+                        
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d40886.830442687766!2d-5.127996999999958!3d50.17185400000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x486b16307846c97b%3A0x6b783d3b216b6f4d!2sGo+Tripod+Ltd!5e0!3m2!1sen!2s!4v1398110943195" width="100%" height="300" frameborder="0" style="border:0"></iframe>
+                    
+					</div>		
+					
+				</div><!-- end .row -->
+			
+				<div class="row">
+				
+					<div class="sixteen columns">
+					
+						<ul class="social-icons footer">
+						
+							<li><a href="http://www.twitter.com/gotripod" target="_blank" title="go Tripod on Twitter"><img src="assets/img/social-icons/twitter_icon_small.png" width="32" height="32" alt="" /></a></li>
+							<li><a href="http://www.facebook.com/gotripod" target="_blank" title="go Tripod on Facebook"><img src="assets/img/social-icons/facebook_icon_small.png" width="32" height="32" alt="" /></a></li>
+							<li><a href="http://www.linkedin.com/company/go-tripod-ltd" target="_blank" title="Go Tripod on LinkedIn"><img src="assets/img/social-icons/linkedin_icon_small.png" width="32" height="32" alt="" /></a></li>
+							<li><a href="https://plus.google.com/u/0/b/101897321380998049253/101897321380998049253/posts" target="_blank" title="go Tripod on Google +"><img src="assets/img/social-icons/google_plus_icon_small.png" width="32" height="32" alt="" /></a></li>
+							
+						</ul>
+						
+					</div>
+					
+				</div><!-- end .row -->
+		
+				<div class="row">
+		
+					<div class="sixteen columns">
+				  	  
+			  			<p id="copyright-details">&copy; 2014	 Go Tripod.<br>Registered in the UK company number 6912029 VAT No. 972 5228 06</p>
+             		
+			  		</div>
+			  		
+			  	</div><!-- end .row -->	  
+		  	
+			</div><!-- end .container -->
+		
+		</section><!-- end #contact -->
+		
+	</footer><!-- end #footer-global -->
+
+    </body>
+</html>

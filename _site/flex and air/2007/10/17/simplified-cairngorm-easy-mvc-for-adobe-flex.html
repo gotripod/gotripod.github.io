@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>The Go Tripod Blog</title>
+        <meta name="viewport" content="width=device-width">
+
+       <!-- CSS (Stylesheets)
+        ================================================== -->
+    
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/font-awesome.css">
+        
+        <!-- Google Web Fonts
+        ================================================== -->
+        
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Cabin">
+        
+        <!-- Favicons
+        ================================================== -->
+       
+        
+
+    </head>
+    <body>
+
+        <div class="site">
+          <div class="header">
+            <nav id="header-navigation" class="sixteen columns" role="navigation">
+            
+              <ul id="navigation">
+                  <li><a href="index.html#header-global" title="Home">Home</a></li>
+                  <li><a href="index.html#introduction" title="About Us">About Us</a></li>
+                  <li><a href="index.html#latest-work" title="Our Work">Our Work</a></li>
+                  <li><a href="index.html#services" title="Our Services">Our Services</a></li>
+                  <li><a href="index.html#meet-the-team" title="Meet the Team">Meet the team</a></li>
+                <li><a href="#" title="Blog">Blog</a></li>
+                  <li><a href="index.html#contact" title="Contact Us">Contact Us</a></li>
+              </ul>
+              
+              <select name="dropdown" size="1" onChange="scrollTo(this.value)">
+                  <option value="" selected="selected">Navigation</option>
+                  <option value="index.html#header-global">Home</option>
+                  <option value="index.html#introduction">About Us</option>
+                  <option value="index.html#latest-work">Our Work</option> 
+                  <option value="index.html#services">Our Services</option> 
+                  <option value="index.html#meet-the-team">Meet the team</option>
+                  <option value="#">Blog</option>
+                  <option value="index.html#contact">Contact Us</option>
+              </select>
+              
+			</nav><!-- end #header-navigation -->
+          </div>
+		
+        <section id="blog">
+          <div class="container" style="margin-bottom:30px;">
+			
+				<div class="icon-holder intro" style="margin:0 auto;">
+					<i class="icon-book" style="color:#e47c14 !important;"></i>
+				</div>
+			
+          <h2>Simplified Cairngorm, Easy MVC for Adobe Flex</h2>
+<p class="meta">17 Oct 2007</p>
+
+<div class="post">
+<p>Like many others, I have been struggling to fully get my head fully around the <a href="http://labs.adobe.com/wiki/index.php/Cairngorm">Cairngorm Micro Architecture</a>, and even with the excellent <a href="http://www.tylerbeck.com/CairngormCreator/">Cairngorm Creator</a>, I find it a little overkill for many Adobe Flex projects I am involved with, in fact, <a href="http://weblogs.macromedia.com/swebster/archives/2006/08/why_i_think_you.cfm">so does Steven Webster</a> (one of the creators of Cairngorm).</p>
+
+<p>So yesterday I sat in on an excellent Adobe eSeminar, presented by <a href="http://www.searchcoders.com/">Tom Bray of SearcherCoders</a> who presented an easy / simplified Model View Controller architecture based on Cairngorm.</p>
+
+<p>To demonstrate the need for these frameworks, Tom started with an excellent example of an application based on a simple chat client. Inspired by his excellent <a href="http://www.chatopica.com/">Chatopica</a> perhaps?:<br />
+<a id="more"></a><a id="more-7"></a></p>
+
+<ol class="CodeRay">
+<li><span class="pp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></li>
+<li><span class="ta">&lt;mx:Application</span> <span class="an">xmlns:mx</span>=<span class="s"><span class="dl">"</span><span class="k">http://www.adobe.com/2006/mxml</span><span class="dl">"</span></span> <span class="an">layout</span>=<span class="s"><span class="dl">"</span><span class="k">vertical</span><span class="dl">"</span></span><span class="ta">&gt;</span></li>
+<li> <span class="ta">&lt;mx:Script&gt;</span></li>
+<li> <span class="er">&lt;</span>![CDATA[</li>
+<li> import mx.collections.ArrayCollection;</li>
+<li> [Bindable]</li>
+<li> public var rooms:ArrayCollection = new ArrayCollection( ["Flex", "Flash", "AIR", "ColdFusion" ] );</li>
+<li> [Bindable]</li>
+<li> public var users:ArrayCollection = new ArrayCollection( ["John", "Paul", "George", "Ringo" ] );</li>
+<li> [Bindable]</li>
+<li> public var currentRoom:String;</li>
+<li> [Bindable]</li>
+<li> public var messages:String = "";</li>
+<li> private function joinRoom( room:String ):void</li>
+<li> {</li>
+<li> currentRoom = room;</li>
+<li> views.selectedChild = chatPanel;</li>
+<li> }</li>
+<li> private function sendMessage( message:String ):void</li>
+<li> {</li>
+<li> messages += message + "\n";</li>
+<li> }</li>
+<li> ]]<span class="er">&gt;</span></li>
+<li> <span class="ta">&lt;/mx:Script&gt;</span></li>
+<li> <span class="ta">&lt;mx:ViewStack</span> <span class="an">id</span>=<span class="s"><span class="dl">"</span><span class="k">views</span><span class="dl">"</span></span> <span class="an">resizeToContent</span>=<span class="s"><span class="dl">"</span><span class="k">true</span><span class="dl">"</span></span><span class="ta">&gt;</span></li>
+<li> <span class="ta">&lt;mx:Panel</span> <span class="an">title</span>=<span class="s"><span class="dl">"</span><span class="k">Room List</span><span class="dl">"</span></span> <span class="an">width</span>=<span class="s"><span class="dl">"</span><span class="k">300</span><span class="dl">"</span></span> <span class="an">height</span>=<span class="s"><span class="dl">"</span><span class="k">400</span><span class="dl">"</span></span><span class="ta">&gt;</span></li>
+<li> <span class="ta">&lt;mx:VBox</span> <span class="an">width</span>=<span class="s"><span class="dl">"</span><span class="k">100%</span><span class="dl">"</span></span> <span class="an">height</span>=<span class="s"><span class="dl">"</span><span class="k">100%</span><span class="dl">"</span></span><span class="ta">&gt;</span></li>
+<li> <span class="ta">&lt;mx:List</span> <span class="an">id</span>=<span class="s"><span class="dl">"</span><span class="k">roomList</span><span class="dl">"</span></span> <span class="an">width</span>=<span class="s"><span class="dl">"</span><span class="k">100%</span><span class="dl">"</span></span> <span class="an">height</span>=<span class="s"><span class="dl">"</span><span class="k">100%</span><span class="dl">"</span></span></li>
+<li> <span class="an">borderSides</span>=<span class="s"><span class="dl">"</span><span class="k">top</span><span class="dl">"</span></span> <span class="an">dataProvider</span>=<span class="s"><span class="dl">"</span><span class="k">{rooms}</span><span class="dl">"</span></span><span class="ta">/&gt;</span></li>
+<li> <span class="ta">&lt;mx:Button</span> <span class="an">width</span>=<span class="s"><span class="dl">"</span><span class="k">100%</span><span class="dl">"</span></span> <span class="an">label</span>=<span class="s"><span class="dl">"</span><span class="k">Chat</span><span class="dl">"</span></span> <span class="an">enabled</span>=<span class="s"><span class="dl">"</span><span class="k">{roomList.selectedItem != null}</span><span class="dl">"</span></span></li>
+<li> <span class="an">click</span>=<span class="s"><span class="dl">"</span><span class="k">joinRoom(roomList.selectedItem as String)</span><span class="dl">"</span></span><span class="ta">/&gt;</span></li>
+<li> <span class="ta">&lt;/mx:VBox&gt;</span></li>
+<li> <span class="ta">&lt;/mx:Panel&gt;</span></li>
+<li> <span class="ta">&lt;mx:Panel</span> <span class="an">title</span>=<span class="s"><span class="dl">"</span><span class="k">Topic: {currentRoom}</span><span class="dl">"</span></span> <span class="an">id</span>=<span class="s"><span class="dl">"</span><span class="k">chatPanel</span><span class="dl">"</span></span> <span class="an">width</span>=<span class="s"><span class="dl">"</span><span class="k">500</span><span class="dl">"</span></span> <span class="an">height</span>=<span class="s"><span class="dl">"</span><span class="k">400</span><span class="dl">"</span></span><span class="ta">&gt;</span></li>
+<li> <span class="ta">&lt;mx:HBox</span> <span class="an">width</span>=<span class="s"><span class="dl">"</span><span class="k">100%</span><span class="dl">"</span></span> <span class="an">height</span>=<span class="s"><span class="dl">"</span><span class="k">100%</span><span class="dl">"</span></span> <span class="an">paddingLeft</span>=<span class="s"><span class="dl">"</span><span class="k">10</span><span class="dl">"</span></span> <span class="an">paddingBottom</span>=<span class="s"><span class="dl">"</span><span class="k">10</span><span class="dl">"</span></span></li>
+<li> <span class="an">paddingRight</span>=<span class="s"><span class="dl">"</span><span class="k">10</span><span class="dl">"</span></span> <span class="an">paddingTop</span>=<span class="s"><span class="dl">"</span><span class="k">10</span><span class="dl">"</span></span><span class="ta">&gt;</span></li>
+<li> <span class="ta">&lt;mx:VBox</span> <span class="an">width</span>=<span class="s"><span class="dl">"</span><span class="k">150</span><span class="dl">"</span></span> <span class="an">height</span>=<span class="s"><span class="dl">"</span><span class="k">100%</span><span class="dl">"</span></span><span class="ta">&gt;</span></li>
+<li> <span class="ta">&lt;mx:Label</span> <span class="an">text</span>=<span class="s"><span class="dl">"</span><span class="k">User List</span><span class="dl">"</span></span><span class="ta">/&gt;</span></li>
+<li> <span class="ta">&lt;mx:List</span> <span class="an">width</span>=<span class="s"><span class="dl">"</span><span class="k">100%</span><span class="dl">"</span></span> <span class="an">height</span>=<span class="s"><span class="dl">"</span><span class="k">100%</span><span class="dl">"</span></span> <span class="an">dataProvider</span>=<span class="s"><span class="dl">"</span><span class="k">{users}</span><span class="dl">"</span></span><span class="ta">/&gt;</span></li>
+<li> <span class="ta">&lt;/mx:VBox&gt;</span></li>
+<li> <span class="ta">&lt;mx:VBox</span> <span class="an">width</span>=<span class="s"><span class="dl">"</span><span class="k">100%</span><span class="dl">"</span></span> <span class="an">height</span>=<span class="s"><span class="dl">"</span><span class="k">100%</span><span class="dl">"</span></span> <span class="ta">&gt;</span></li>
+<li> <span class="ta">&lt;mx:Label</span> <span class="an">text</span>=<span class="s"><span class="dl">"</span><span class="k">Chat</span><span class="dl">"</span></span><span class="ta">/&gt;</span></li>
+<li> <span class="ta">&lt;mx:TextArea</span> <span class="an">id</span>=<span class="s"><span class="dl">"</span><span class="k">chatText</span><span class="dl">"</span></span> <span class="an">text</span>=<span class="s"><span class="dl">"</span><span class="k">{messages}</span><span class="dl">"</span></span></li>
+<li> <span class="an">editable</span>=<span class="s"><span class="dl">"</span><span class="k">false</span><span class="dl">"</span></span> <span class="an">width</span>=<span class="s"><span class="dl">"</span><span class="k">100%</span><span class="dl">"</span></span> <span class="an">height</span>=<span class="s"><span class="dl">"</span><span class="k">100%</span><span class="dl">"</span></span> <span class="an">wordWrap</span>=<span class="s"><span class="dl">"</span><span class="k">true</span><span class="dl">"</span></span><span class="ta">/&gt;</span></li>
+<li> <span class="ta">&lt;mx:HBox</span> <span class="an">width</span>=<span class="s"><span class="dl">"</span><span class="k">100%</span><span class="dl">"</span></span><span class="ta">&gt;</span></li>
+<li> <span class="ta">&lt;mx:TextInput</span> <span class="an">id</span>=<span class="s"><span class="dl">"</span><span class="k">messageInput</span><span class="dl">"</span></span> <span class="an">width</span>=<span class="s"><span class="dl">"</span><span class="k">100%</span><span class="dl">"</span></span> <span class="an">minWidth</span>=<span class="s"><span class="dl">"</span><span class="k">0</span><span class="dl">"</span></span><span class="ta">/&gt;</span></li>
+<li> <span class="ta">&lt;mx:Button</span> <span class="an">label</span>=<span class="s"><span class="dl">"</span><span class="k">Send</span><span class="dl">"</span></span> <span class="an">click</span>=<span class="s"><span class="dl">"</span><span class="k">sendMessage( messageInput.text )</span><span class="dl">"</span></span><span class="ta">/&gt;</span></li>
+<li> <span class="ta">&lt;/mx:HBox&gt;</span></li>
+<li> <span class="ta">&lt;/mx:VBox&gt;</span></li>
+<li> <span class="ta">&lt;/mx:HBox&gt;</span></li>
+<li> <span class="ta">&lt;/mx:Panel&gt;</span></li>
+<li> <span class="ta">&lt;/mx:ViewStack&gt;</span></li>
+<li><span class="ta">&lt;/mx:Application&gt;</span></li>
+</ol>
+
+<p>The above example application is a classic example of how most of us start out developing in Flex, we end up putting all our properties and event handlers in the same file. This may be fine for a tiny application but if we want to scale it up we are going to run into problems.</p>
+
+<p>For example, Flex offers us the ability to create a custom <span class="caps"><span class="caps">MXML</span></span> component, that we can then reuse through our application, so as Tom showed, maybe we want to take the code that displays the Room list (above) and copy this into a separate mxml component . We can easily cut and paste the code and create a new <span class="caps"><span class="caps">MXML</span></span> file RoomList.mxml with the following code:</p>
+
+<ol class="CodeRay">
+<li><span class="pp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></li>
+<li><span class="ta">&lt;mx:Panel</span> <span class="an">title</span>=<span class="s"><span class="dl">"</span><span class="k">Room List</span><span class="dl">"</span></span> <span class="an">xmlns:mx</span>=<span class="s"><span class="dl">"</span><span class="k">http://www.adobe.com/2006/mxml</span><span class="dl">"</span></span> <span class="an">width</span>=<span class="s"><span class="dl">"</span><span class="k">300</span><span class="dl">"</span></span> <span class="an">height</span>=<span class="s"><span class="dl">"</span><span class="k">400</span><span class="dl">"</span></span><span class="ta">&gt;</span></li>
+<li>    <span class="ta">&lt;mx:VBox</span> <span class="an">width</span>=<span class="s"><span class="dl">"</span><span class="k">100%</span><span class="dl">"</span></span> <span class="an">height</span>=<span class="s"><span class="dl">"</span><span class="k">100%</span><span class="dl">"</span></span><span class="ta">&gt;</span></li>
+<li>    <span class="ta">&lt;mx:List</span> <span class="an">id</span>=<span class="s"><span class="dl">"</span><span class="k">roomList</span><span class="dl">"</span></span> <span class="an">width</span>=<span class="s"><span class="dl">"</span><span class="k">100%</span><span class="dl">"</span></span> <span class="an">height</span>=<span class="s"><span class="dl">"</span><span class="k">100%</span><span class="dl">"</span></span></li>
+<li>            <span class="an">borderSides</span>=<span class="s"><span class="dl">"</span><span class="k">top</span><span class="dl">"</span></span> <span class="an">dataProvider</span>=<span class="s"><span class="dl">"</span><span class="k">{rooms}</span><span class="dl">"</span></span><span class="ta">/&gt;</span></li>
+<li>    <span class="ta">&lt;mx:Button</span> <span class="an">width</span>=<span class="s"><span class="dl">"</span><span class="k">100%</span><span class="dl">"</span></span> <span class="an">label</span>=<span class="s"><span class="dl">"</span><span class="k">Chat</span><span class="dl">"</span></span> <span class="an">enabled</span>=<span class="s"><span class="dl">"</span><span class="k">{roomList.selectedItem != null}</span><span class="dl">"</span></span></li>
+<li>            <span class="an">click</span>=<span class="s"><span class="dl">"</span><span class="k">joinRoom(roomList.selectedItem as String)</span><span class="dl">"</span></span><span class="ta">/&gt;</span></li>
+<li>  <span class="ta">&lt;/mx:VBox&gt;</span></li>
+<li><span class="ta">&lt;/mx:Panel&gt;</span></li>
+</ol>
+
+<p>The problem is that we now have introduced two errors as the ArrayCollection ‘rooms’ is no longer in this mxml file then we cannot bind to it as the dataProvider for the roomList, also the event handler ‘joinRoom’ is no longer accessible. We could move these into this file, but then they couldn’t access the view stack and the problem goes on. So what we really need is to centralise our data into a central model and also centralise our even handlers into a controller.</p>
+
+<h2>Centralising Data into a Model</h2>
+
+<p>To centralise data, Tom took the Cairngorm’s modelLocator pattern, based around a <a href="http://en.wikipedia.org/wiki/Singleton_pattern">singleton pattern</a> . Where by the singleton ensures there is only ever one instance of itself, we define our Model as follows:</p>
+
+<ol class="CodeRay">
+<li><span class="r">package</span> com.chatopica.chat.model</li>
+<li>{</li>
+<li>  <span class="r">public</span> <span class="r">class</span> ChatModel</li>
+<li>  {</li>
+<li>    <span class="r">private</span> <span class="r">static</span> <span class="r">var</span> instance:ChatModel;</li>
+<li>    <span class="r">public</span> <span class="r">function</span> ChatModel()</li>
+<li>    {</li>
+<li>      <span class="r">if</span>( instance != <span class="pc">null</span> )</li>
+<li>      {</li>
+<li>        <span class="r">throw</span>( new Error( <span class="s"><span class="dl">"</span><span class="k">there can be only one instance of ChatModel</span><span class="dl">"</span></span> ) );</li>
+<li>      }</li>
+<li>    }</li>
+<li>    <span class="r">public</span> <span class="r">static</span> <span class="r">function</span> getInstance():ChatModel</li>
+<li>    {</li>
+<li>      <span class="r">if</span>( instance == <span class="pc">null</span> )</li>
+<li>      {</li>
+<li>        instance = new ChatModel();</li>
+<li>      }</li>
+<li>      <span class="r">return</span> instance;</li>
+<li>    }</li>
+<li>  }</li>
+<li>}</li>
+</ol>
+
+<p>This is a typical singleton, implemented in ActionScript 3. As Tom pointed out in the eSeminar, ActionScript does not allow for private constructors, so here he is throwing an error if we try and instantiate the class and it is already instantiated. We can now access this Model anywhere in our application by simply typing</p>
+
+<ol class="CodeRay">
+<li>ChatModel.getInstance()</li>
+</ol>
+
+<p>So the next thing to do is move our ArrayCollection rooms into the Model so we end up with the following:</p>
+
+<ol class="CodeRay">
+<li><span class="r">package</span> com.chatopica.chat.model</li>
+<li>{</li>
+<li>  <span class="r">import</span> mx.collections.ArrayCollection;</li>
+<li>  <span class="r">public</span> <span class="r">class</span> ChatModel</li>
+<li>  {</li>
+<li>    <span class="r">private</span> <span class="r">static</span> <span class="r">var</span> instance:ChatModel;</li>
+<li>    [Bindable]</li>
+<li>    <span class="r">public</span> <span class="r">var</span> rooms:ArrayCollection = new ArrayCollection( [ new Room(<span class="s"><span class="dl">"</span><span class="k">Flex</span><span class="dl">"</span></span>), new Room(<span class="s"><span class="dl">"</span><span class="k">Flash</span><span class="dl">"</span></span>), new Room(<span class="s"><span class="dl">"</span><span class="k"><span class="caps">AIR</span></span><span class="dl">"</span></span>), new Room(<span class="s"><span class="dl">"</span><span class="k">ColdFusion</span><span class="dl">"</span></span>) ] );</li>
+<li>    <span class="r">public</span> <span class="r">function</span> ChatModel()</li>
+<li>    {</li>
+<li>      <span class="r">if</span>( instance != <span class="pc">null</span> )</li>
+<li>      {</li>
+<li>        <span class="r">throw</span>( new Error( <span class="s"><span class="dl">"</span><span class="k">there can be only one instance of ChatModel</span><span class="dl">"</span></span> ) );</li>
+<li>      }</li>
+<li>    }</li>
+<li>    <span class="r">public</span> <span class="r">static</span> <span class="r">function</span> getInstance():ChatModel</li>
+<li>    {</li>
+<li>      <span class="r">if</span>( instance == <span class="pc">null</span> )</li>
+<li>      {</li>
+<li>        instance = new ChatModel();</li>
+<li>      }</li>
+<li>      <span class="r">return</span> instance;</li>
+<li>    }</li>
+<li>  }</li>
+<li>}</li>
+</ol>
+
+<p>Because our ArrayCollection is now in the Model that we can access from anywhere. We can change the mx:List ‘roomList’ in RoomList.mxml to use the rooms ArrayCollection in the Model as the dataProvider as follows:</p>
+
+<ol class="CodeRay">
+<li><span class="ta">&lt;mx:List</span> <span class="an">id</span>=<span class="s"><span class="dl">"</span><span class="k">roomList</span><span class="dl">"</span></span> <span class="an">width</span>=<span class="s"><span class="dl">"</span><span class="k">100%</span><span class="dl">"</span></span> <span class="an">height</span>=<span class="s"><span class="dl">"</span><span class="k">100%</span><span class="dl">"</span></span>  <span class="an">borderSides</span>=<span class="s"><span class="dl">"</span><span class="k">top</span><span class="dl">"</span></span> <span class="an">dataProvider</span>=<span class="s"><span class="dl">"</span><span class="k">{ChatModel.getInstance().rooms}</span><span class="dl">"</span></span><span class="ta">/&gt;</span></li>
+</ol>
+
+<p>We have now fixed the first issue but we still have the issue of the click handler for the button being inaccessible. We can solve this by centralising our events into a Controller</p>
+
+<h2>Centralising Events into a Controller</h2>
+
+<p>As with many event driven languages, ActionScript has a handy feature known as event bubbling. When an event is fired in a container, if the event has been set to bubble (by default events don’t bubble) it will also fire on it’s parent container, and in turn fire on the grandparent container all the way up to the main Application <span class="caps"><span class="caps">MXML</span></span> class. By bubbling events, we can register event listeners on the System Manager and listen for any global application events that are set to bubble. So we can dispatch an event anywhere in our application using the following, and we can listen for it on the System Manager:</p>
+
+<ol class="CodeRay">
+<li>dispatchEvent(new Event(<span class="s"><span class="dl">‘</span><span class="k">myEvent</span><span class="dl">‘</span></span>, <span class="pc">true</span>))</li>
+</ol>
+
+<p><em>Note:</em> We have set the second parameter (bubbles) on the Event constructor to true, which tells the event dispatcher to bubble this event.</p>
+
+<p>As we are centralising our events we may need to send related information along with the event, for use by the event handler. For example, as the event handler is no longer able to directly query the roomList, to see which item has been selected (i.e. roomList.selectedItem), we need to send this information with the event. We can easily do this by creating a custom event that extends the Event class as follows:</p>
+
+<ol class="CodeRay">
+<li><span class="r">package</span> com.chatopica.chat.events</li>
+<li>{</li>
+<li>  <span class="r">import</span> com.chatopica.chat.model.Room;</li>
+<li>  <span class="r">import</span> flash.events.Event;</li>
+<li>  <span class="r">public</span> <span class="r">class</span> JoinRoomEvent <span class="r">extends</span> Event</li>
+<li>  {</li>
+<li>    <span class="r">public</span> <span class="r">static</span> <span class="r">const</span> JOIN:<span class="pt">String</span> = <span class="s"><span class="dl">"</span><span class="k">joinRoom</span><span class="dl">"</span></span>;</li>
+<li>    <span class="r">public</span> <span class="r">var</span> room:Room;</li>
+<li>    <span class="r">public</span> <span class="r">function</span> JoinRoomEvent( room:Room )</li>
+<li>    {</li>
+<li>      <span class="pc">super</span>( <span class="caps">JOIN</span>, <span class="pc">true</span> );</li>
+<li>      <span class="pc">this</span>.room = room;</li>
+<li>    }</li>
+<li>  }</li>
+<li>}</li>
+</ol>
+
+<p>Above we have simply extended the event using inheritance and have added a public property called room (of type Room, Tom has created a Room class that holds the name as well as a collection of Users). We have also declared the event name/type as a constant <span class="caps"><span class="caps">JOIN</span></span> = “joinRoom”. This allows us to reference this event anywhere. In our constructor, we call the constructor on the parent class (Event) setting the event name/type to “joinRoom” and stating that it should bubble (like this we don’t have to specify that it bubbles when we create a new JoinRoomEvent). We then set the room property from the parameter passed to the constructor.</p>
+
+<p>So now we can fire a JoinRoomEvent anywhere in our application, passing in a room object. The event handler listening for this event will have access to this room object. So we can fix the last error in RoomList.mxml as follows:</p>
+
+<ol class="CodeRay">
+<li><span class="ta">&lt;mx:Button</span> <span class="an">width</span>=<span class="s"><span class="dl">"</span><span class="k">100%</span><span class="dl">"</span></span> <span class="an">label</span>=<span class="s"><span class="dl">"</span><span class="k">Chat</span><span class="dl">"</span></span> <span class="an">enabled</span>=<span class="s"><span class="dl">"</span><span class="k">{roomList.selectedItem != null}</span><span class="dl">"</span></span></li>
+<li>      <span class="an">click</span>=<span class="s"><span class="dl">"</span><span class="k">dispatchEvent( new JoinRoomEvent( roomList.selectedItem as Room ) )</span><span class="dl">"</span></span><span class="ta">/&gt;</span></li>
+</ol>
+
+<p>So far we have created a custom event and we have discussed where to look to find bubbling events but we have not looked at how to do this.</p>
+
+<h2>The Controller</h2>
+
+<p>As I mentioned before, we can listen to all events that have been set to bubble on the systemManager and as UIComponent (anyone who has created a custom component will know this one) has a reference to systemManager within it, we can extend this class. The other benefit of extending UIComponent for our class that will be our central event handler or Controller is that we can then use it in <span class="caps"><span class="caps">MXML</span></span>.</p>
+
+<p>We extend the UIComponent as follows:</p>
+
+<ol class="CodeRay">
+<li><span class="r">package</span> com.chatopica.chat.controller</li>
+<li>{</li>
+<li>  <span class="r">import</span> com.chatopica.chat.events.JoinRoomEvent;</li>
+<li>  <span class="r">import</span> com.chatopica.chat.events.SendMessageEvent;</li>
+<li>  <span class="r">import</span> com.chatopica.chat.model.ChatModel;</li>
+<li>  <span class="r">import</span> flash.events.Event;</li>
+<li>  <span class="r">import</span> mx.core.UIComponent;</li>
+<li>  <span class="r">import</span> mx.events.FlexEvent;</li>
+<li>  <span class="r">public</span> <span class="r">class</span> ChatController <span class="r">extends</span> UIComponent</li>
+<li>  {</li>
+<li>    <span class="r">public</span> <span class="r">function</span> ChatController()</li>
+<li>    {</li>
+<li>      addEventListener( FlexEvent.CREATION_COMPLETE, setupEventListeners );</li>
+<li>    }</li>
+<li>    <span class="r">private</span> <span class="r">function</span> setupEventListeners( <span class="pt">event</span>:Event ):<span class="r">void</span></li>
+<li>    {</li>
+<li>      systemManager.addEventListener( JoinRoomEvent.JOIN, handle_joinRoom );</li>
+<li>    }</li>
+<li>    <span class="r">private</span> <span class="r">function</span> handle_joinRoom( <span class="pt">event</span>:JoinRoomEvent ):<span class="r">void</span></li>
+<li>    {</li>
+<li>      ChatModel.getInstance().currentActivity = ChatModel.VIEWING_CHAT;</li>
+<li>    }</li>
+<li>  }</li>
+<li>}</li>
+</ol>
+
+<p><em>Note::</em> Above we have not directly added an event listener to the systemManager in the ChatController constructor. In fact we can’t to do this, because at the time the class is instantiated the systemManager is not initialised and is Null. We would therefore be adding an event listener to nothing. We get around this by adding an event listener for the global FlexEvent.CREATION_COMPLETE event, and at that point we can then add our event handler(s) to the systemManager.</p>
+
+<h2>Controlling the View Stack</h2>
+
+<p>The final thing we have left to achieve is the ability to change the View Stack from the controller, we first need to store the currentActivity or state in the Model as follows:</p>
+
+<ol class="CodeRay">
+<li>    <span class="r">public</span> <span class="r">static</span> <span class="r">const</span> VIEWING_CHAT:<span class="pt">String</span> = <span class="s"><span class="dl">"</span><span class="k">viewingChat</span><span class="dl">"</span></span>;</li>
+<li>    <span class="r">public</span> <span class="r">static</span> <span class="r">const</span> VIEWING_ROOMS:<span class="pt">String</span> = <span class="s"><span class="dl">"</span><span class="k">viewingRooms</span><span class="dl">"</span></span>;</li>
+<li>    [Bindable]</li>
+<li>    <span class="r">public</span> <span class="r">var</span> currentActivity:<span class="pt">String</span>;</li>
+</ol>
+
+<p>In addition to the currentActivity property above, we have also added a constant value for each state. Unfortunately it is not as simple as binding this property to the mx:ViewStack, but that does not mean it isn’t easy. All we have to use is the ChangeWatcher class that monitors a property and fires and event when it changes. We do this in the file MainView.mxml that holds out viewstack as follows:</p>
+
+<ol class="CodeRay">
+<li><span class="pp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></li>
+<li><span class="ta">&lt;mx:ViewStack</span> <span class="an">xmlns:mx</span>=<span class="s"><span class="dl">"</span><span class="k">http://www.adobe.com/2006/mxml</span><span class="dl">"</span></span> <span class="an">resizeToContent</span>=<span class="s"><span class="dl">"</span><span class="k">true</span><span class="dl">"</span></span> <span class="an">xmlns:views</span>=<span class="s"><span class="dl">"</span><span class="k">com.chatopica.chat.views.</span><span class="dl"><strong>"</strong></span></span><span class="ta"><strong>&gt;</strong></span></li>
+<li><strong>  <span class="ta">&lt;mx:Script&gt;</span></strong></li>
+<li><strong>    <span class="er">&lt;</span>![CDATA[</strong></li>
+<li><strong>      import mx.events.PropertyChangeEvent;</strong></li>
+<li><strong>      import mx.binding.utils.ChangeWatcher;</strong></li>
+<li><strong>      import com.chatopica.chat.model.ChatModel;</strong></li>
+<li><strong>      </strong></li>
+<li><strong> private var activityWatcher:ChangeWatcher = ChangeWatcher.watch( ChatModel.getInstance(), "currentActivity", handle_activityChange );</strong></li>
+<li><strong>      </strong></li>
+<li><strong>      private function handle_activityChange( event:PropertyChangeEvent ):void</strong></li>
+<li><strong>      {</strong></li>
+<li><strong>        if( event.newValue == ChatModel.VIEWING_CHAT )</strong></li>
+<li><strong>        {</strong></li>
+<li><strong>          selectedChild = chatPanel;</strong></li>
+<li><strong>        }</strong></li>
+<li><strong>      }</strong></li>
+<li><strong>    ]]<span class="er">&gt;</span></strong></li>
+<li><strong>  <span class="ta">&lt;/mx:Script&gt;</span></strong></li>
+<li><strong>      </strong></li>
+<li><strong>  <span class="ta">&lt;views:RoomList</span><span class="ta">/&gt;</span></strong></li>
+<li><strong>  </strong></li>
+<li><span class="ta"><strong>&lt;/mx:ViewStack&gt;</strong></span></li>
+</ol>
+
+<p><strong>    </strong><strong>Now, when the value of currentActivity in the ChatModel changes, Flex will dispatch a PropertyChangedEvent. We can then listen for this event and change the view, accessing what the new value of currentActivity is in the newValue property of the PropertyChangeEvent (shown above as event.newValue).</strong></p>
+
+<p><strong>    </strong></p>
+
+<h2><strong>Refactor the rest of your application…</strong></h2>
+
+<p><strong>    </strong><strong>Having done this for the RoomList component, we can now repeat the process for the code that implements the chat window. Finally we are simply left with the following in our mx:Application tags:</strong></p>
+
+<ol class="CodeRay">
+<li><span class="pp"><strong>&lt;?xml version="1.0" encoding="utf-8"?&gt;</strong></span></li>
+<li><span class="ta"><strong>&lt;mx:Application</strong></span><strong> <span class="an">xmlns:mx</span>=<span class="s"><span class="dl">"</span><span class="k">http://www.adobe.com/2006/mxml</span><span class="dl">"</span></span> <span class="an">layout</span>=<span class="s"><span class="dl">"</span><span class="k">vertical</span><span class="dl">"</span></span> <span class="an">xmlns:views</span>=<span class="s"><span class="dl">"</span><span class="k">com.chatopica.chat.views.</span></span></strong><span class="dl">"</span> <span class="an">xmlns:controller</span>=<span class="s"><span class="dl">"</span><span class="k">com.chatopica.chat.controller.*</span><span class="dl">"</span></span><span class="ta">&gt;</span></li>
+<li>    <span class="ta">&lt;controller:ChatController</span><span class="ta">/&gt;</span></li>
+<li>    <span class="ta">&lt;views:MainView</span><span class="ta">/&gt;</span></li>
+<li><span class="ta">&lt;/mx:Application&gt;</span></li>
+</ol>
+
+<p>This process now makes our code cleaner, loosely coupled and more <span class="caps"><span class="caps">DRY</span></span> (Don’t Repeat Yourself), easy to scale and we can reuse these components without the risk of breaking our system.</p>
+
+<p>Thanks again to Tom for the excellent eSeminar which has really clarified my understanding for the necessities of using an architecture like this.</p>
+
+<p><a href="http://www.tombray.com/?p=57">Source code for this example was kindly supplied by Tom Bray, you can download them directly from his blog.</a></p>
+
+<p><a href="http://www.tombray.com/?p=59">A transcript of the questions and answers session from Tom’s eSemminar, is also available on his blog</a></p>
+
+<p><em>Update 23/01/08: </em><a href="http://www.gotripod.com/2008/01/21/scaling-up-easymvc-as-your-flex-application-grows-part-1/"><em>I have added an article on scaling up EasyMVC, you can read it by clicking here.</em> </a></p>
+
+<p>For more information:</p>
+
+<ul>
+<li><a href="http://www.tombray.com/">Tom Bray</a></li>
+<li><a href="http://www.chatopica.com/">Chatopica</a></li>
+<li><a href="http://www.searchcoders.com/">SearchCoders</a></li>
+<li><a href="http://www.adobe.com/products/flex/">Adobe Flex</a></li>
+</ul>
+
+</div>
+
+			
+          </div>
+          </section>
+			
+          <footer id="footer-global" role="contentinfo" class="clearfix">
+	
+		<section id="contact">
+		
+			<div class="container">
+			
+				<div class="row">
+		
+					<div class="sixteen columns">
+					
+						<div class="icon-holder contact">
+							<i class="icon-envelope"></i>
+						</div>
+						
+						<h1>Got a great idea? Lets talk.</h1>
+						
+						<p>Please get in touch with us, we promise we won't bite!</p>
+					
+						<address id="contact-details">
+						
+							<p><a href="mailto:hello@gotripod.com?Subject=Ok, don't bite me! But I would like to talk about ...">hello@gotripod.com</a> // <a href="tel:08454752487">0845 475 2487</a><br />
+							Tremough Innovation Centre, Penryn Campus
+							<br>
+							 Penryn, Cornwall, UK, TR10 9TA</p>
+						
+						</address>
+                        
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d40886.830442687766!2d-5.127996999999958!3d50.17185400000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x486b16307846c97b%3A0x6b783d3b216b6f4d!2sGo+Tripod+Ltd!5e0!3m2!1sen!2s!4v1398110943195" width="100%" height="300" frameborder="0" style="border:0"></iframe>
+                    
+					</div>		
+					
+				</div><!-- end .row -->
+			
+				<div class="row">
+				
+					<div class="sixteen columns">
+					
+						<ul class="social-icons footer">
+						
+							<li><a href="http://www.twitter.com/gotripod" target="_blank" title="go Tripod on Twitter"><img src="assets/img/social-icons/twitter_icon_small.png" width="32" height="32" alt="" /></a></li>
+							<li><a href="http://www.facebook.com/gotripod" target="_blank" title="go Tripod on Facebook"><img src="assets/img/social-icons/facebook_icon_small.png" width="32" height="32" alt="" /></a></li>
+							<li><a href="http://www.linkedin.com/company/go-tripod-ltd" target="_blank" title="Go Tripod on LinkedIn"><img src="assets/img/social-icons/linkedin_icon_small.png" width="32" height="32" alt="" /></a></li>
+							<li><a href="https://plus.google.com/u/0/b/101897321380998049253/101897321380998049253/posts" target="_blank" title="go Tripod on Google +"><img src="assets/img/social-icons/google_plus_icon_small.png" width="32" height="32" alt="" /></a></li>
+							
+						</ul>
+						
+					</div>
+					
+				</div><!-- end .row -->
+		
+				<div class="row">
+		
+					<div class="sixteen columns">
+				  	  
+			  			<p id="copyright-details">&copy; 2014	 Go Tripod.<br>Registered in the UK company number 6912029 VAT No. 972 5228 06</p>
+             		
+			  		</div>
+			  		
+			  	</div><!-- end .row -->	  
+		  	
+			</div><!-- end .container -->
+		
+		</section><!-- end #contact -->
+		
+	</footer><!-- end #footer-global -->
+
+    </body>
+</html>

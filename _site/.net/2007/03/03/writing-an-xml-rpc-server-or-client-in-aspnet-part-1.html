@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>The Go Tripod Blog</title>
+        <meta name="viewport" content="width=device-width">
+
+       <!-- CSS (Stylesheets)
+        ================================================== -->
+    
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/font-awesome.css">
+        
+        <!-- Google Web Fonts
+        ================================================== -->
+        
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Cabin">
+        
+        <!-- Favicons
+        ================================================== -->
+       
+        
+
+    </head>
+    <body>
+
+        <div class="site">
+          <div class="header">
+            <nav id="header-navigation" class="sixteen columns" role="navigation">
+            
+              <ul id="navigation">
+                  <li><a href="index.html#header-global" title="Home">Home</a></li>
+                  <li><a href="index.html#introduction" title="About Us">About Us</a></li>
+                  <li><a href="index.html#latest-work" title="Our Work">Our Work</a></li>
+                  <li><a href="index.html#services" title="Our Services">Our Services</a></li>
+                  <li><a href="index.html#meet-the-team" title="Meet the Team">Meet the team</a></li>
+                <li><a href="#" title="Blog">Blog</a></li>
+                  <li><a href="index.html#contact" title="Contact Us">Contact Us</a></li>
+              </ul>
+              
+              <select name="dropdown" size="1" onChange="scrollTo(this.value)">
+                  <option value="" selected="selected">Navigation</option>
+                  <option value="index.html#header-global">Home</option>
+                  <option value="index.html#introduction">About Us</option>
+                  <option value="index.html#latest-work">Our Work</option> 
+                  <option value="index.html#services">Our Services</option> 
+                  <option value="index.html#meet-the-team">Meet the team</option>
+                  <option value="#">Blog</option>
+                  <option value="index.html#contact">Contact Us</option>
+              </select>
+              
+			</nav><!-- end #header-navigation -->
+          </div>
+		
+        <section id="blog">
+          <div class="container" style="margin-bottom:30px;">
+			
+				<div class="icon-holder intro" style="margin:0 auto;">
+					<i class="icon-book" style="color:#e47c14 !important;"></i>
+				</div>
+			
+          <h2>Writing an XML-RPC server or client in ASP.Net: Part 1</h2>
+<p class="meta">03 Mar 2007</p>
+
+<div class="post">
+<p><a href="http://www.gotripod.com/2007/03/09/writing-an-xml-rpc-server-or-client-in-aspnet-part-2/">Part Two available here</a></p>
+
+<p>I have recently be working on a project which needed to implement the blogging MetaWebLog <span class="caps">API</span>, allowing users to post blog messages from their favorite blog editor, such as Windows Live Writer or blog directly from MetaWebLog <span class="caps">API</span> enabled websites such as Flickr or Digg. My tutorial below will show you how to easily create or consume an <span class="caps">XML</span>-RPC service such as the MetaWebLog <span class="caps">API</span>.</p>
+
+<p><a id="more"></a><a id="more-314"></a></p>
+
+<p>The MetaWebLog <span class="caps">API</span> runs over <a href="http://www.xmlrpc.com/"><span class="caps">XML</span>-RPC</a> an open standard for <span class="caps">HTTP</span> based remote procedure calls and is the standard api protocol for blog platforms. A <a href="http://www.xml-rpc.net/">.Net <span class="caps">XML</span>-RPC framework</a> already exists for use in <span class="caps">ASP</span>.Net, which has been developed by Charles Cook of <a href="http://www.cookcomputing.com/blog/index.html">CookComputing</a> .</p>
+
+<p><strong>Setting up the project</strong></p>
+
+<p>You can create an <span class="caps"><span class="caps">XML</span></span>-RPC server or client easily within an existing project. To start working with <span class="caps"><span class="caps">XML</span></span>-RPC, the first thing you will need to do in download the <a href="http://www.xml-rpc.net/">.Net <span class="caps"><span class="caps">XML</span></span>-RPC implementation from CooksComputing.</a> Although I think the <span class="caps"><span class="caps">XML</span></span>-RPC implementation is an excellent stable offering, the documentation is a little sketchy and hard to follow at times which is why I am posting this tutorial. Once you have downloaded the latest version, extract only the following file from the .zip archive: This is the core component you will need:</p>
+
+<p>For .Net 2.0 the file is: <em><strong>bin/CookComputing.XmlRpcV2.dll</strong>For .Net 1.0/1.1 the file is: <strong>bin1_0/CookComputing.XmlRpc.dll</strong></em></p>
+
+<p>Once extracted you will need to copy this .dll to your projects /bin/ directory. You can now create or consume an <span class="caps"><span class="caps">XML</span></span>-RPC service.</p>
+
+<p><strong>Creating a <span class="caps"><span class="caps">XML</span></span>-RPC Server</strong></p>
+
+<p>For this example I am going to implement the MetaWebLog <span class="caps"><span class="caps">API</span></span> in C# to do this we need to add two files to our project, a generic handler and a class file to handler requests to the generic handler.</p>
+
+<p>For this example I will create a handler named MetaWebLog.ashx and it will contain simply the following webhandler directive:</p>
+
+<pre lang="asp">
+<%@ WebHandler Language="C#" Class="MetaWebLogHandler" %></pre>
+<p>I now need to create my MetaWebLogHandler.cs class file in the App_Code directory. Within this file we first need to reference the CookComputing.XmlRpc package as follows:</p>
+<pre lang="csharp">
+using CookComputing.XmlRpc;</pre>
+<p>Once we have done that we need to alter the class definition as follows passing some parameters to the <span class="caps"><span class="caps">XML</span></span>-RPC service and inheriting the class from XmlRpcService as follows:</p>
+<pre lang="csharp">
+[XmlRpcService(Name = "MetaWebLogApi",
+Description = "This is XML-RPC which implement MetaWeblog API.",
+AutoDocumentation = true)]
+face=”Courier New”&gt;http://www.miletbaker.com/Blog/MetaWebLog.ashx")]
+public class MetaWebLogHandler : XmlRpcService
+{
+
+}</pre>
+<p>The Name parameter indicates the name of our service, in this case MetaWebLogApi, there is a description and the AutoDocumentation allows us to browse to the <span class="caps"><span class="caps">XML</span></span>-RPC service (.ashx generic handler file) and see the available methods.</p>
+<p>We can now create our methods, the <a href="http://www.xmlrpc.com/metaWeblogApi">MetaWebLog <span class="caps"><span class="caps">API</span></span> is documented at the <span class="caps"><span class="caps">XML</span></span>-RPC site</a> , but again it is not very clear. However, I was able to find a <a href="http://msdn2.microsoft.com/en-us/library/bb259697.aspx">definition on <span class="caps"><span class="caps">MSDN</span></span></a> which was very helpful. We basically need to implement the following methods:</p>
+<p>metaWeblog.newPost<br />
+metaWeblog.editPost<br />
+metaWeblog.getPost<br />
+metaWeblog.getCategories<br />
+metaWeblog.getRecentPosts<br />
+blogger.deletePost<br />
+blogger.getUsersBlogs<br />
+blogger.getUserInfo</p>
+<p><em>Note: I have found that with the last three methods prefixed blogger. although these are defined by <span class="caps"><span class="caps">XML</span></span>-RPC like this, some MetaWebLog <span class="caps"><span class="caps">API</span></span> clients call these methods with the metaWebLog. prefix instead.</em></p>
+<p>For each of these methods we need to make a compiler declaration before the method to indicate the <span class="caps"><span class="caps">XML</span></span>-RPC method name. I will not go through each method but rather show you one as an example of how to work with an <span class="caps"><span class="caps">XML</span></span>-RPC request.</p>
+<pre lang="csharp">
+[XmlRpcMethod("metaWeblog.getPost")]
+public XmlRpcStruct getPost(string postid, string username, string password)
+{
+ If (Authenticate(username, password))
+ {
+    //We need to create an XML-RPC Struct to return
+    XmlRpcStruct rpcstruct = new XmlRpcStruct();
+    rpcstruct.Add("postid", "1234");
+    rpcstruct.Add("dateCreated", DateTime.Now.PublishedAt.ToUniversalTime());
+    rpcstruct.Add("title", "A blog post");
+    rpcstruct.Add("link", "http://www.miletbaker.com/blog/Article.aspx?id=1234");
+    rpcstruct.Add("description", "test");
+    rpcstruct.Add("categories", new string[] {"News","Opinion"});
+    rpcstruct.Add("publish", true);     return rpcstruct;
+ }
+ else {
+    HttpContext.Current.Response.Clear();
+    HttpContext.Current.Response.StatusCode = 403;
+    HttpContext.Current.Response.Flush();
+    return null;
+ }
+
+}</pre>
+<p>In this example we are being sent a blog post item id, and a username and password. We first want to check the username and password are valid, I have an Authenticate method to do this. If we are not authorized I use the Response object to return a 403 – Not Authorised message, else we can continue. I would normally use the post ID to query a database but here I have hard coded the response. We need to respond within a nested <span class="caps"><span class="caps">XML</span></span> element / struct with specific parameter names, to do this we use the XmlRpcStruct object. We create a new <span class="caps"><span class="caps">XML</span></span>-RPC object and then use the Add method to add each parameter name (key) and value. Once we have done that we can return it. <span class="caps"><span class="caps">XML</span></span>-RPC also handles Arrays and in the MetaWebLog <span class="caps"><span class="caps">API</span></span>, the MetaWebLog.getRecentPosts needs to return each post as an element of an array of XmlRpcStructs.</p>
+<p>Once we have written our methods we can build and browse to our MetaWebLog.ashx file and if all is working the methods should be listed in the browser.</p>
+<p>To overcome the issue with some blog editors calling metaweblog.deletePost rather than blogger.deletePost, you simply create an additional method to handle this and then call your other method i.e.</p>
+<pre lang="csharp">
+[XmlRpcMethod("MetaWebLog.deletePost")]
+public bool MWLDeletePost(string appKey, string postid, string username, string password, bool publish)
+{
+    return this.deletePost(appKey, postid, username, password, publish);
+}
+</pre>
+
+<p>In <a href="http://www.gotripod.com/2007/03/09/writing-an-xml-rpc-server-or-client-in-aspnet-part-2/">part II</a>, I will look at how we implement an <span class="caps"><span class="caps">XML</span></span>-RPC client to ping blogging servers.</p>
+
+<p><a href="http://www.gotripod.com/2007/03/09/writing-an-xml-rpc-server-or-client-in-aspnet-part-2/">Part Two available here</a></p>
+
+</div>
+
+			
+          </div>
+          </section>
+			
+          <footer id="footer-global" role="contentinfo" class="clearfix">
+	
+		<section id="contact">
+		
+			<div class="container">
+			
+				<div class="row">
+		
+					<div class="sixteen columns">
+					
+						<div class="icon-holder contact">
+							<i class="icon-envelope"></i>
+						</div>
+						
+						<h1>Got a great idea? Lets talk.</h1>
+						
+						<p>Please get in touch with us, we promise we won't bite!</p>
+					
+						<address id="contact-details">
+						
+							<p><a href="mailto:hello@gotripod.com?Subject=Ok, don't bite me! But I would like to talk about ...">hello@gotripod.com</a> // <a href="tel:08454752487">0845 475 2487</a><br />
+							Tremough Innovation Centre, Penryn Campus
+							<br>
+							 Penryn, Cornwall, UK, TR10 9TA</p>
+						
+						</address>
+                        
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d40886.830442687766!2d-5.127996999999958!3d50.17185400000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x486b16307846c97b%3A0x6b783d3b216b6f4d!2sGo+Tripod+Ltd!5e0!3m2!1sen!2s!4v1398110943195" width="100%" height="300" frameborder="0" style="border:0"></iframe>
+                    
+					</div>		
+					
+				</div><!-- end .row -->
+			
+				<div class="row">
+				
+					<div class="sixteen columns">
+					
+						<ul class="social-icons footer">
+						
+							<li><a href="http://www.twitter.com/gotripod" target="_blank" title="go Tripod on Twitter"><img src="assets/img/social-icons/twitter_icon_small.png" width="32" height="32" alt="" /></a></li>
+							<li><a href="http://www.facebook.com/gotripod" target="_blank" title="go Tripod on Facebook"><img src="assets/img/social-icons/facebook_icon_small.png" width="32" height="32" alt="" /></a></li>
+							<li><a href="http://www.linkedin.com/company/go-tripod-ltd" target="_blank" title="Go Tripod on LinkedIn"><img src="assets/img/social-icons/linkedin_icon_small.png" width="32" height="32" alt="" /></a></li>
+							<li><a href="https://plus.google.com/u/0/b/101897321380998049253/101897321380998049253/posts" target="_blank" title="go Tripod on Google +"><img src="assets/img/social-icons/google_plus_icon_small.png" width="32" height="32" alt="" /></a></li>
+							
+						</ul>
+						
+					</div>
+					
+				</div><!-- end .row -->
+		
+				<div class="row">
+		
+					<div class="sixteen columns">
+				  	  
+			  			<p id="copyright-details">&copy; 2014	 Go Tripod.<br>Registered in the UK company number 6912029 VAT No. 972 5228 06</p>
+             		
+			  		</div>
+			  		
+			  	</div><!-- end .row -->	  
+		  	
+			</div><!-- end .container -->
+		
+		</section><!-- end #contact -->
+		
+	</footer><!-- end #footer-global -->
+
+    </body>
+</html>
