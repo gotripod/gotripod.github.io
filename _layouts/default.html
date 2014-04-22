@@ -31,24 +31,24 @@
             <nav id="header-navigation" class="sixteen columns" role="navigation">
             
               <ul id="navigation">
-                  <li><a href="index.html#header-global" title="Home">Home</a></li>
-                  <li><a href="index.html#introduction" title="About Us">About Us</a></li>
-                  <li><a href="index.html#latest-work" title="Our Work">Our Work</a></li>
-                  <li><a href="index.html#services" title="Our Services">Our Services</a></li>
-                  <li><a href="index.html#meet-the-team" title="Meet the Team">Meet the team</a></li>
+                  <li><a href="/index.html#header-global" title="Home">Home</a></li>
+                  <li><a href="/index.html#introduction" title="About Us">About Us</a></li>
+                  <li><a href="/index.html#latest-work" title="Our Work">Our Work</a></li>
+                  <li><a href="/index.html#services" title="Our Services">Our Services</a></li>
+                  <li><a href="/index.html#meet-the-team" title="Meet the Team">Meet the team</a></li>
                 <li><a href="/blog.html" title="Blog">Blog</a></li>
-                  <li><a href="index.html#contact" title="Contact Us">Contact Us</a></li>
+                  <li><a href="/index.html#contact" title="Contact Us">Contact Us</a></li>
               </ul>
               
               <select name="dropdown" size="1" onChange="scrollTo(this.value)">
                   <option value="" selected="selected">Navigation</option>
-                  <option value="index.html#header-global">Home</option>
-                  <option value="index.html#introduction">About Us</option>
-                  <option value="index.html#latest-work">Our Work</option> 
-                  <option value="index.html#services">Our Services</option> 
-                  <option value="index.html#meet-the-team">Meet the team</option>
+                  <option value="/index.html#header-global">Home</option>
+                  <option value="/index.html#introduction">About Us</option>
+                  <option value="/index.html#latest-work">Our Work</option> 
+                  <option value="/index.html#services">Our Services</option> 
+                  <option value="/index.html#meet-the-team">Meet the team</option>
                   <option value="/blog.html">Blog</option>
-                  <option value="index.html#contact">Contact Us</option>
+                  <option value="/index.html#contact">Contact Us</option>
               </select>
               
 			</nav><!-- end #header-navigation -->
@@ -131,6 +131,26 @@
 		</section><!-- end #contact -->
 		
 	</footer><!-- end #footer-global -->
+    <script type="text/javascript">
 
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-9912208-1']);
+	  _gaq.push(['_trackPageview']);
+	
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	
+	</script>
+	<script type="text/javascript">
+    function scrollTo(target) {
+        var targetPosition = $(target).offset().top;
+        $('html,body').animate({
+            scrollTop: targetPosition
+        }, 'slow');
+    }
+    </script>
     </body>
 </html>
