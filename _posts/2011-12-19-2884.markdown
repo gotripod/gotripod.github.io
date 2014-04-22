@@ -1,0 +1,27 @@
+---
+layout: post
+status: publish
+published: true
+title: A Go Tripod Christmas
+author: Colin Ramsay
+author_login: colin
+author_email: colin@gotripod.com
+wordpress_id: 2884
+wordpress_url: http://www.gotripod.com/?p=2884
+date: !binary |-
+  MjAxMS0xMi0xOSAxNToyMTo0NiArMDEwMA==
+date_gmt: !binary |-
+  MjAxMS0xMi0xOSAxNToyMTo0NiArMDEwMA==
+categories:
+- Go Tripod
+tags: []
+comments: []
+---
+<p>It's been a great year for Go Tripod and early plans for 2012 look to be just as exciting for our colleagues and for our clients.</p>
+<p>First off, I’m pleased to say that our team is expanding again. We have just hired a new office manager, Sophie Yule. As our client base continues to grow, Sophie has joined the Cornwall team to assist us in ensuring our services are delivered as efficiently as possible.</p>
+<p>Secondly, to allow for our growth down in Cornwall we have moved to new premises in the centre of Truro. Our new offices are located on St George's Road, opposite The (famously excellent) Cheese Shop.</p>
+<p>To celebrate, the team got together at <a href="http://www.thecovemaenporth.co.uk/">The Cove, in Maenporth</a>, near Falmouth in Cornwall to have a great meal and one or two drinks.</p>
+<div style="text-align: center;"><a href="http://www.gotripod.com/wp-content/uploads/2011/12/Screen-Shot-2011-12-16-at-09.21.07.png"><img src="http://www.gotripod.com/wp-content/uploads/2011/12/Screen-Shot-2011-12-16-at-09.21.07-300x183.png" alt="Go Tripod Xmas 2011" title="Go Tripod Xmas 2011" width="300" height="183" class="size-medium wp-image-2885" /></a></div>
+<p>So, on into 2012. The new year will bring with it a new website design for gotripod.com – allowing for easier scalability as we evolve on into the future. The new design will still incorporate the best bits of the current Wordpress functionality, but if you notice anything that doesn’t appear to be working or any other bugs after the new design is launched please let us know.</p>
+<p>Additionally, for those of you who may not know, we have a newsletter with our Christmas edition coming out this week. Feel free to <a href="http://www.gotripod.com/newsletter-signup" target="_blank">subscribe</a> for news, updates, offers and everything else Tripod-related and you’ll be sure not to miss anything.</p>
+<p>Finally, we wish all our blog readers, clients and colleagues a very happy Christmas and all the best for 2012.</p>

@@ -1,0 +1,21 @@
+---
+layout: post
+status: publish
+published: true
+title: Music Diary 2012
+author: Jon Baker
+author_login: jon
+author_email: jon@gotripod.com
+wordpress_id: 3916
+wordpress_url: http://stage.gotripod.com/?p=3916
+date: !binary |-
+  MjAxMi0wNS0wOSAwODoyNjo1OSArMDIwMA==
+date_gmt: !binary |-
+  MjAxMi0wNS0wOSAwODoyNjo1OSArMDIwMA==
+categories:
+- Go Tripod
+- Happiness
+tags: []
+comments: []
+---
+<p>As big music fans at Go Tripod, we're always recommending and listening to lots of new music. On his personal blog, <a href="http://colinramsay.co.uk/diary/">Colin's taking part in Music Diary 2012</a>, keeping a log of everything he listens to for the next week. <a href="http://colinramsay.co.uk/diary/">Take a look</a>!</p>
