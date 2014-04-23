@@ -8,4 +8,4 @@ title: Support
 
 <p>We will be contacting you shortly with the details sepcifically regarding your application. Of course, the support contract is not obligatory, but we hope you will find it really helpful and provides peace of mind.</p>
 
-<p>For all support enquiries, problems, questions etc please use our new support ticket platform. To do this, just email your questiion or problem to support@gotripod.com and a ticket will be created for you. Or if you wish, please login (For those already using the system) or create a free account at http://support.gotripod.com</p>
+<p>For all support enquiries, problems, questions etc please use our new support ticket platform. To do this, just email your questiion or problem to <a href="mailto:support@gotripod.com" style="color:#00B5F7;font-weight:bold;text-decoration:none;" target="_blank"> support@gotripod.com</a> and a ticket will be created for you. Or if you wish, please login (For those already using the system) or create a free account at <a href="http://support.gotripod.com" style="color:#00B5F7;font-weight:bold;text-decoration:none;" target="_blank"> http://support.gotripod.com</a></p>
