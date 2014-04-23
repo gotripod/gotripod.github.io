@@ -31,8 +31,3 @@ title: SSL Heartbleed Bug
 	Thanks for reading,</p>
 <p style="margin-bottom:15px;">
 	GT Team </p>
-<p>Be the first to hear all about our latest news and stuff, click the button to add your name to the list<br>
-<div class="createsend-button" style="height:27px;display:inline-block;" data-listid="r/22/530/325/9AF2398656ACD312">
-</div><script type="text/javascript">(function () { var e = document.createElement('script'); e.type = 'text/javascript'; e.async = true; e.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://btn.createsend1.com/js/sb.min.js?v=2'; e.className = 'createsend-script'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(e, s); })();</script></p>	
-
-                                 
