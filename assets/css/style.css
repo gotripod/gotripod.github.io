@@ -1764,12 +1764,18 @@ nav select {
 	z-index: 300;
 	-webkit-box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, .9);
 	box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, .9);
+	
 }
 
 .blog-items {
 	text-align:left;
+	
+		white-space: nowrap;
+  		overflow: hidden;
+  		text-overflow: ellipsis;
 }
 
+.blog-items span { clear:both;float:left;width:145px; }
 .blog-post {
 	text-align:left;
 }
@@ -1888,10 +1894,29 @@ nav select {
 }
 
 /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
-@media only screen and (min-width: 480px) and (max-width: 767px) {}
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	.blog-items { 
+		font-size:14px;
+		white-space: nowrap;
+  		overflow: hidden;
+  		text-overflow: ellipsis;
+	}
+	.blog-items span { clear:both;float:left;width:85px; }
+	
+	}
 
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
-@media only screen and (max-width: 479px) {}
+@media only screen and (max-width: 479px) {
+	.blog-items { 
+		font-size:14px; 
+		white-space: nowrap;
+  		overflow: hidden;
+  		text-overflow: ellipsis;
+		}
+	.blog-items span { clear:both;float:left;width:85px; }
+	
+	}
 
 /* Mobile Portrait Size Only (devices and browsers) */
-@media only screen and (max-width: 320px) {}
+@media only screen and (max-width: 320px) {
+	.blog-items { font-size:14px;}
