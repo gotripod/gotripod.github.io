@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The Go Tripod Website: A New Hope
+title: The Go Tripod Website - A New Hope
 published: false
 ---
 
