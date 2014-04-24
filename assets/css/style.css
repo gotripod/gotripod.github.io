@@ -910,6 +910,10 @@ body:before {
 	z-index: 1000;
 }
 
+#header-global.blog {
+	padding-bottom: 0;
+}
+
 #header-global[role="banner"] .row {
 	margin-bottom: 0;
 }
