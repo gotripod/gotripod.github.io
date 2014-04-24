@@ -2,20 +2,18 @@
 layout: master
 ---
 
-    <header id="header-global" class="blog" role="banner">
-        {% include header-nav.html %}
-    </header>
+<header id="header-global" class="blog" role="banner">
+    {% include header-nav.html %}
+</header>
+	
+<section id="blog">
+    <div class="container">
+        <div class="icon-holder blog"><i class="icon-book"></i></div>
 		
-    <section id="blog">
-        <div class="container" style="margin-bottom:30px;">
-            <div class="icon-holder intro" style="margin:0 auto;">
-                <i class="icon-book" style="color:#e47c14 !important;"></i>
-            </div>
-			
-            {{ content }}
-			
-        </div>
-        
-        {% include createsend.html %}
+        {{ content }}
+		
+    </div>
+    
+    {% include createsend.html %}
 
-    </section>
+</section>
