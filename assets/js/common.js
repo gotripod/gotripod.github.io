@@ -1,5 +1,7 @@
 jQuery(document).ready(function ($) {
 	function scrollTo(target) {
+		target = target.replace('/', '');
+
 	    var targetPosition = $(target).offset().top;
 	    $('html,body').animate({
 	        scrollTop: targetPosition
@@ -16,7 +18,7 @@ jQuery(document).ready(function ($) {
 	$("#header-navigation").sticky({topSpacing:0});
 
 	$('#navigation a').click(function() {
-		scrollTo($(this).attr('href').replace('/', ''));
+		scrollTo($(this).attr('href'));
 	});
 
 	$('#header-navigation select').change(function() {
