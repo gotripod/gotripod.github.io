@@ -28,6 +28,8 @@ Our background images, which slipped past as you scrolled, were all set as backg
 
 Next I looked at the stuff we had left from our original HTML template. Our particular template came with a load of extra JavaScript stuff (such as the rather excellent, but unnecessary [Isotope](http://isotope.metafizzy.co/)) which needed to be removed. The HTML needed to be tidied and the CSS needed to be minimised. I had a quick look at [Google's Pagespeed Insights](http://developers.google.com/speed/pagespeed/insights/) and [Pingdom's Website Speed Tests](http://tools.pingdom.com/).
 
+<p style="text-align:center;"><img src="/assets/img/googlevspingdom.png" alt="Google and Pingdom" title="Google and Pingdom"></p>
+
 Ok, but not great. Time to go to work.
 
 - Remove the extra JS
