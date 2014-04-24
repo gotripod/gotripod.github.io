@@ -1,50 +1,7 @@
-<!DOCTYPE html>
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
-<head>
-
-	<!-- Basic Page Needs
-  	================================================== -->
-	
-	<meta charset="utf-8">
-	<title>Bespoke Software Development in Cornwall - Go Tripod</title>
-	<meta name="description" content="Bespoke software development for web apps and mobile apps">
-	<meta name="keywords" content="Mobile apps, web apps, web applications, Cornwall, Devon, Somerset"
-    
-	<!-- Mobile Specific Metas
-  	================================================== -->
-	
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-	<!-- CSS (Stylesheets)
-  	================================================== -->
-
-	<link rel="stylesheet" href="/assets/css/style.css">
-	<link rel="stylesheet" href="/assets/css/font-awesome.css">
-	<link rel="stylesheet" href="/assets/css/fancybox.css">
-	<link rel="stylesheet" href="/assets/css/flexslider.css">
-	
-	<!-- Google Web Fonts
-	================================================== -->
-	
-	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald">
-	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Cabin">
-	
-	<!-- Favicons
-	================================================== -->
-	
-	<link rel="shortcut icon" href="/assets/img/favicon.png">
-	<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="/assets/img/apple-touch-icon-114x114.png">
-	
-	<!--[if lt IE 9]>
-	<script src="assets/js/html5shiv.js"></script>
-	<![endif]-->
-
-</head>
-
-<body>
+---
+layout: master
+title: Bespoke Software Development in Cornwall - Go Tripod
+---
 
 	<div class="header-background-image"></div>
 
@@ -77,28 +34,7 @@
 			
 		</div><!-- end .logo-icons container -->
 			
-		<nav id="header-navigation" class="sixteen columns" role="navigation">
-			<ul id="navigation">
-				<li><a href="#header-global" title="Home">Home</a></li>
-				<li><a href="#introduction" title="About Us">About Us</a></li>
-				<li><a href="#latest-work" title="Our Work">Our Work</a></li>
-				<li><a href="#services" title="Our Services">Our Services</a></li>
-				<li><a href="#meet-the-team" title="Meet the Team">Meet the team</a></li>
-              <li><a href="blog.html" title="Blog">Blog</a></li>
-				<li><a href="#contact" title="Contact Us">Contact Us</a></li>
-			</ul>
-			
-			<select name="dropdown" size="1">
-				<option value="" selected="selected">Navigation</option>
-				<option value="/#header-global">Home</option>
-				<option value="/#introduction">About Us</option>
-				<option value="/#latest-work">Our Work</option> 
-				<option value="/#services">Our Services</option> 
-				<option value="/#meet-the-team">Meet the team</option>
-				<option value="/blog.html">Blog</option>
-				<option value="/#contact">Contact Us</option>
-			</select>
-		</nav><!-- end #header-navigation -->
+		{% include header-nav.html %}
 			
 		<div class="container">
 			
@@ -642,113 +578,3 @@
 		</section><!-- end #meet-the-team -->
 	
 	</div><!-- end #main -->
-
-	<footer id="footer-global" role="contentinfo" class="clearfix">
-	
-		<section id="contact">
-		
-			<div class="container">
-			
-				<div class="row">
-		
-					<div class="sixteen columns">
-					
-						<div class="icon-holder contact">
-							<i class="icon-envelope"></i>
-						</div>
-						
-						<h1>Got a great idea? Lets talk.</h1>
-						
-						<p>Please get in touch with us, we promise we won't bite!</p>
-					
-						<address id="contact-details">
-						
-							<p><a href="mailto:hello@gotripod.com?Subject=Ok, don't bite me! But I would like to talk about ...">hello@gotripod.com</a> // <a href="tel:08454752487">0845 475 2487</a><br />
-							Tremough Innovation Centre, Penryn Campus
-							<br>
-							 Penryn, Cornwall, UK, TR10 9TA</p>
-						
-						</address>
-                        
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d40886.830442687766!2d-5.127996999999958!3d50.17185400000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x486b16307846c97b%3A0x6b783d3b216b6f4d!2sGo+Tripod+Ltd!5e0!3m2!1sen!2s!4v1398110943195" width="100%" height="300" frameborder="0" style="border:0"></iframe>
-                    
-					</div>		
-					
-				</div><!-- end .row -->
-			
-				<div class="row">
-				
-					<div class="sixteen columns">
-					
-						<ul class="social-icons footer">
-						
-							<li><a href="http://www.twitter.com/gotripod" target="_blank" title="go Tripod on Twitter"><img src="assets/img/social-icons/twitter_icon_small.png" width="32" height="32" alt="" /></a></li>
-							<li><a href="http://www.facebook.com/gotripod" target="_blank" title="go Tripod on Facebook"><img src="assets/img/social-icons/facebook_icon_small.png" width="32" height="32" alt="" /></a></li>
-							<li><a href="http://www.linkedin.com/company/go-tripod-ltd" target="_blank" title="Go Tripod on LinkedIn"><img src="assets/img/social-icons/linkedin_icon_small.png" width="32" height="32" alt="" /></a></li>
-							<li><a href="https://plus.google.com/u/0/b/101897321380998049253/101897321380998049253/posts" target="_blank" title="go Tripod on Google +"><img src="assets/img/social-icons/google_plus_icon_small.png" width="32" height="32" alt="" /></a></li>
-							
-						</ul>
-						
-					</div>
-					
-				</div><!-- end .row -->
-		
-				<div class="row">
-		
-					<div class="sixteen columns">
-				  	  
-			  			<p id="copyright-details">&copy; 2014	 Go Tripod.<br>Registered in the UK company number 6912029 VAT No. 972 5228 06</p>
-             		
-			  		</div>
-			  		
-			  	</div><!-- end .row -->	  
-		  	
-			</div><!-- end .container -->
-		
-		</section><!-- end #contact -->
-		
-	</footer><!-- end #footer-global -->
-	
-<script type="text/javascript">
-function scrollTo(target) {
-    var targetPosition = $(target).offset().top;
-    $('html,body').animate({
-        scrollTop: targetPosition
-    }, 'slow');
-}
-</script>
-
-<!-- JS (Javascript Files)
-================================================== -->
-
-<script src="assets/js/modernizr-2.6.2.min.js"></script>
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-<script src="assets/js/jquery.isotope.min.js"></script>
-<script src="assets/js/jquery.easing.min.js"></script>
-<script src="assets/js/jquery.quote.rotator.min.js"></script>
-<script src="assets/js/jquery.flexslider.min.js"></script>
-<script src="assets/js/jquery.fancybox.min.js"></script>
-<script src="assets/js/jquery.fitvids.js"></script>
-<script src="assets/js/respond.min.js"></script>
-<script src="assets/js/jquery.sticky.js"></script>
-<script src="assets/js/custom.js"></script>
-<script src="assets/js/common.js"></script>
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-9912208-1']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-
-
-</body>
-
-</html>

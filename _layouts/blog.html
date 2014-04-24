@@ -1,0 +1,23 @@
+---
+layout: master
+---
+
+<div class="site">
+    <div class="header">
+        {% include header-nav.html %}
+    </div>
+		
+    <section id="blog">
+        <div class="container" style="margin-bottom:30px;">
+            <div class="icon-holder intro" style="margin:0 auto;">
+                <i class="icon-book" style="color:#e47c14 !important;"></i>
+            </div>
+			
+            {{ content }}
+			
+        </div>
+        
+        {% include createsend.html %}
+
+    </section>
+</div>
