@@ -41,15 +41,15 @@
                   <li><a href="/index.html#contact" title="Contact Us">Contact Us</a></li>
               </ul>
               
-              <select name="dropdown" size="1" onChange="scrollTo(this.value)">
+              <select name="dropdown" size="1">
                   <option value="" selected="selected">Navigation</option>
-                  <option value="/index.html#header-global">Home</option>
-                  <option value="/index.html#introduction">About Us</option>
-                  <option value="/index.html#latest-work">Our Work</option> 
-                  <option value="/index.html#services">Our Services</option> 
-                  <option value="/index.html#meet-the-team">Meet the team</option>
+                  <option value="/#header-global">Home</option>
+                  <option value="/#introduction">About Us</option>
+                  <option value="/#latest-work">Our Work</option> 
+                  <option value="/#services">Our Services</option> 
+                  <option value="/#meet-the-team">Meet the team</option>
                   <option value="/blog.html">Blog</option>
-                  <option value="/index.html#contact">Contact Us</option>
+                  <option value="/#contact">Contact Us</option>
               </select>
               
 			</nav><!-- end #header-navigation -->
@@ -151,6 +151,8 @@
 	  })();
 	
 	</script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+	<script src="/assets/js/common.js"></script>
 	<script type="text/javascript">
     function scrollTo(target) {
         var targetPosition = $(target).offset().top;
