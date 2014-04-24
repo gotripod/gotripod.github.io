@@ -1,4 +1,15 @@
 jQuery(document).ready(function ($) {
+	function scrollTo(target) {
+	    var targetPosition = $(target).offset().top;
+	    $('html,body').animate({
+	        scrollTop: targetPosition
+	    }, 'slow');
+	}
+
+	$("ul#quotes").quote_rotator();
+	
+	$("#header-navigation").sticky({topSpacing:0});
+
 	$('#header-navigation select').change(function() {
 		var val = this.value;
 
