@@ -1,4 +1,6 @@
-name: Your New Jekyll Site
+name: Go Tripod WWW
 markdown: redcarpet
 pygments: true
 permalink: :title
+gems:
+  - jekyll-redirect-from
