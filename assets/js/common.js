@@ -1,6 +1,16 @@
 jQuery(document).ready(function ($) {
 	$('.header-background-image').neatShow();
-	
+
+	function setBackgroundImageWidths() {
+		$('.header-background-image').css({
+			width: $(window).width() 
+		});
+	};
+
+	setBackgroundImageWidths();
+
+	$(window).resize(setBackgroundImageWidths);
+
 	function scrollTo(target) {
 		target = target.replace('/', '');
 

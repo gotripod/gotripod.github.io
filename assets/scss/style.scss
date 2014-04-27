@@ -901,7 +901,7 @@ body:before {
 --------------------------------------------------*/
 
 #header-global[role="banner"] {
-	background-color: #fff;
+	background-color: #000;
 	color: #fff;
 	font-family: 'Oswald', sans-serif;
 	width: 100%;
@@ -928,11 +928,11 @@ body:before {
 }
 
 .header-background-image {
-	width: 100%;
 	height: 900px;	
 	margin: 0 auto;
 	position: absolute;
 	background-color: black;
+	display: none;
 }
 
 .logo-icons.container {
