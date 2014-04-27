@@ -1,4 +1,6 @@
 jQuery(document).ready(function ($) {
+	$('.header-background-image').neatShow();
+	
 	function scrollTo(target) {
 		target = target.replace('/', '');
 
