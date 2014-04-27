@@ -928,7 +928,7 @@ body:before {
 }
 
 .header-background-image {
-	height: 900px;	
+	height: 900px !important;	
 	margin: 0 auto;
 	position: absolute;
 	background-color: black;
@@ -1844,7 +1844,7 @@ nav select {
 }
 
 	.header-background-image {
-		height: 800px;
+		height: 800px !important;
 	}
 	
 	.logos h2 {
