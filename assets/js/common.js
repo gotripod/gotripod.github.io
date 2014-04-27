@@ -25,7 +25,7 @@ jQuery(document).ready(function ($) {
 	}, 5000);
 	
 
-	$("ul.quotes").quote_rotator();
+	$("ul#quotes").quote_rotator();
 	
 	$("#header-navigation").sticky({topSpacing:0});
 

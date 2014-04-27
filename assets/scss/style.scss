@@ -1,10 +1,4 @@
-@mixin transition($transition-property, $transition-time, $method) {
-    -webkit-transition: $transition-property $transition-time $method;
-    -moz-transition: $transition-property $transition-time $method;
-    -ms-transition: $transition-property $transition-time $method;
-    -o-transition: $transition-property $transition-time $method;
-    transition: $transition-property $transition-time $method;
-}
+
 	
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
 	margin: 0;
@@ -934,7 +928,7 @@ body:before {
 }
 
 .header-background-image {
-	height: 900px !important;	
+	height: 900px;	
 	margin: 0 auto;
 	position: absolute;
 	background-color: black;
@@ -1376,6 +1370,37 @@ nav select {
 	display: block;
 }
 
+/* Isotope (Portfolio Filtering)
+--------------------------------------------------*/
+
+.isotope-item {
+    z-index: 2;
+}
+
+.isotope-hidden.isotope-item {
+    pointer-events: none;
+    z-index: 1;
+}
+
+.isotope, .isotope .isotope-item {/* change duration value to whatever you like */
+    -webkit-transition-duration: 0.8s;
+       -moz-transition-duration: 0.8s;
+            transition-duration: 0.8s;
+}
+
+.isotope {
+    -webkit-transition-property: height, width;
+       -moz-transition-property: height, width;
+            transition-property: height, width;
+}
+
+.isotope .isotope-item {
+    -webkit-transition-property: -webkit-transform, opacity;
+       -moz-transition-property:    -moz-transform, opacity;
+        -ms-transition-property:     -ms-transform, opacity;
+         -o-transition-property:         top, left, opacity;
+            transition-property:         transform, opacity;
+}
 
 /* Social Media Icons (Header) */
 
@@ -1525,30 +1550,18 @@ nav select {
 /* Quotes/Testimonials
 --------------------------------------------------*/
 
-.latest-quotes {
+#latest-quotes {
 	text-align: center;
 	color: #fff;
-	.quotes {
-		height: 150px; 
-		height: auto!important;
-		min-height: 150px;
-
-		li {
-			width: 100%;
-			position: absolute;
-			margin: 0 auto;
-			opacity: 0;
-			@include transition(opacity, .5s, ease-in-out);
-		}
-
-		li.active {
-			opacity: 1;
-			@include transition(opacity, .5s, ease-in-out);
-		}
-	}
 }
 
-.latest-quotes blockquote {
+#latest-quotes #quotes {
+	height: 150px; 
+	height: auto!important;
+	min-height: 150px;
+}
+
+#latest-quotes blockquote {
 	border: none;
 	color: #fff;
 	font-size: 28px;
@@ -1556,7 +1569,7 @@ nav select {
 	margin-top: 15px;
 }
 
-.latest-quotes cite {
+#latest-quotes cite {
 	background: none;
 	border: 2px solid #e47c14;
 	color: #fff;
@@ -1568,7 +1581,7 @@ nav select {
 	text-transform: uppercase;
 }
 
-.latest-quotes blockquote span {
+#latest-quotes blockquote span {
 	color: #999;
 }
 
@@ -1724,10 +1737,6 @@ nav select {
 @-webkit-keyframes complaining  { 0%  { width: 0px;} 100%{ width: 30%;}  }
 @-webkit-keyframes coffee   	{ 0%  { width: 0px;} 100%{ width: 80%;}  }
 
-#quotes {
-
-}
-
 
 #blog {
 	background: #fff;
@@ -1835,7 +1844,7 @@ nav select {
 }
 
 	.header-background-image {
-		height: 800px !important;
+		height: 800px;
 	}
 	
 	.logos h2 {
