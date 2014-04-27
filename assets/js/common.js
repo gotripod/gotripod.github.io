@@ -1,8 +1,8 @@
 jQuery(document).ready(function ($) {
-	$('.header-background-image').neatShow();
+	$('.header-background-image, .background').neatShow();
 
 	function setBackgroundImageWidths() {
-		$('.header-background-image').css({
+		$('.background').css({
 			width: $(window).width() 
 		});
 	};
