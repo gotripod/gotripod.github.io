@@ -32,9 +32,15 @@ Next I looked at the stuff we had left from our original HTML template. Our part
 
 Ok, but not great. Time to go to work.
 
-- Remove the extra JS
-- Optimise CSS and minimise using SASS with --style compressed
-- Optimise our PNG images
+### Remove the extra JS
+
+
+
+
+### Optimise CSS
+
+
+### Optimise our images
 
 Now let's have a look.
 
