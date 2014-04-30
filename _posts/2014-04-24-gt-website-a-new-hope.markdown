@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The Go Tripod Website - A New Hope
-published: false
+published: true
 ---
 
 Change is good, or so they say. In our case, we wanted to do some spring cleaning and strip back our website into something a bit more *us*. A bit more *2014*.
@@ -10,12 +10,11 @@ So here it is. We took a variety of new approaches when compared to our old site
 
 ## Stand On The Shoulders
 
-Often we'll advocate a client starts a new website from a pre-built HTML template - it gets us up and running quickly and enables them to visualise what the final site's going to look like early on. It reduces cost for the client in a pragmatic way and gives us a solid HTML foundation to build on. There are downsides too, but more on that later.
+Often we'll advocate a client starts a new website from a pre-built HTML template - it gets us up and running quickly and enables them to visualise what the final site's going to look like early on. It reduces cost for the client in a pragmatic way and gives us a solid HTML foundation to build on. 
 
-With our template selected, we selected two strong foundations: Github Pages and Jekyll. This enables us to take advantage of the speed of Github's platform and keep our entire site in a git repository with Jekyll's powerful static site generator. 
+With our template selected, we selected two strong foundations: Github Pages and [Jekyll](http://jekyllrb.com/). This enables us to take advantage of the speed of Github's platform and keep our entire site in a git repository with Jekyll's powerful static site generator. 
 
-We are massive fans and advocates of Github and use it everyday when we build software for our Clients. We use it to maintain sensible software source control, backups and management of everything around software development. 
-Yes, its a wee bit geeky, we admit it and its not something we would encourage everyone to do, but we thought, what the heck lets do this just because we can.
+We are massive fans and advocates of Github and use it everyday when we build software for our Clients. We use it to maintain sensible software source control, backups and management of everything around software development. Yes, its a wee bit geeky, we admit it and its not something we would encourage everyone to do, but we thought, what the heck - lets do this just because we can.
 
 Working with Jekyll makes life super-simple, much more so than our previous Wordpress platform, and all our blogposts are stored a simple markdown files.
 
@@ -56,7 +55,7 @@ With that, I now only include build.min.js from our master template and we've ac
 
 ### Optimise CSS
 
-I'm a fan of the SASS SCSS syntax for authoring CSS, and though the new site doesn't fully utilise it yet, I'd like to do so in the future. For now, we'll just use its ability to import other SCSS files and its compressor to produce a minified CSS file. So as well as our main site CSS, our styles.scss file includes some imports:
+I'm a fan of the [SASS SCSS syntax](http://sass-lang.com/) for authoring CSS, and though the new site doesn't fully utilise it yet, I'd like to do so in the future. For now, we'll just use its ability to import other SCSS files and its compressor to produce a minified CSS file. So as well as our main site CSS, our styles.scss file includes some imports:
 
 {% highlight css %}
 @import "font-awesome";
@@ -85,4 +84,4 @@ Much better!
 
 ## Conclusion
 
-We're not hitting 100% on the scores above, there's a little bit more we could potentially do. Because we opted to host with Github pages, we're limited in our control of server-side caching options. In an ideal world we could tweak this to give repeat visitors better performance. However, I'm pleased that we've managed to polish our original template to the point where it's pretty shiny, and it gives us a great platform to take the website into the future!
+We're not hitting 100% on the scores above, there's a little bit more we could potentially do. Because we opted to host with Github Pages, we're limited in our control of server-side caching options. In an ideal world we could tweak this to give repeat visitors better performance. However, I'm pleased that we've managed to polish our original template to the point where it's pretty shiny, and it gives us a great platform to take the website into the future!
