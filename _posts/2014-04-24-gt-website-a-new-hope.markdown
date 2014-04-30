@@ -28,7 +28,7 @@ Our background images, which slipped past as you scrolled, were all set as backg
 
 Next I looked at the stuff we had left from our original HTML template. Our particular template came with a load of extra JavaScript stuff (such as the rather excellent, but unnecessary [Isotope](http://isotope.metafizzy.co/)) which needed to be removed. The HTML needed to be tidied and the CSS needed to be minimised. I had a quick look at [Google's Pagespeed Insights](http://developers.google.com/speed/pagespeed/insights/) and [Pingdom's Website Speed Tests](http://tools.pingdom.com/).
 
-<p style="text-align:center;"><img src="/assets/img/googlevspingdom.png" alt="Google and Pingdom" title="Google and Pingdom"></p>
+<p style="text-align:center;"><img src="/assets/img/googlevspingdom.png" alt="Google and Pingdom Before" title="Google and Pingdom Before"></p>
 
 Ok, but not great. Time to go to work.
 
@@ -73,4 +73,11 @@ If you're a Mac user, take a look at [ImageOptim](http://imageoptim.com/) which 
 
 Now let's have a look at what our changes have done for the site.
 
-Much better! Github Pages doesn't give us the fine control over some caching options that we might like but overall we're significantly faster than we were.
+<p style="text-align:center;"><img src="/assets/img/blog/googlevspingdom-after.png" alt="Google and Pingdom After" title="Google and Pingdom After"></p>
+
+Much better! 
+
+
+## Conclusion
+
+We're not hitting 100% on the scores above, there's a little bit more we could potentially do. Because we opted to host with Github pages, we're limited in our control of server-side caching options. In an ideal world we could tweak this to give repeat visitors better performance. However, I'm pleased that we've managed to polish our original template to the point where it's pretty shiny, and it gives us a great platform to take the website into the future!
