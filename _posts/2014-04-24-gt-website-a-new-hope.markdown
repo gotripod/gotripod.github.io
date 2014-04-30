@@ -69,8 +69,8 @@ Again, we've got a single compressed file which we now include from our master t
 
 ### Optimise our images
 
-If you're a Mac user, take a look at [ImageOptim](http://imageoptim.com/) which bundles some great optimisation tools with a very simple UI to compress your image. By running our PNG and JPEG images through ImageOptim we saved a whopping.
+If you're a Mac user, take a look at [ImageOptim](http://imageoptim.com/) which bundles some great optimisation tools with a very simple UI to compress your image. By running our PNG and JPEG images through ImageOptim you get about a 10% saving on PNG images, so it's worth a try. 
 
-Now let's have a look.
+Now let's have a look at what our changes have done for the site.
 
 Much better! Github Pages doesn't give us the fine control over some caching options that we might like but overall we're significantly faster than we were.
