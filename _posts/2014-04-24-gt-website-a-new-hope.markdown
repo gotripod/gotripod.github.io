@@ -12,7 +12,12 @@ So here it is. We took a variety of new approaches when compared to our old site
 
 Often we'll advocate a client starts a new website from a pre-built HTML template - it gets us up and running quickly and enables them to visualise what the final site's going to look like early on. It reduces cost for the client in a pragmatic way and gives us a solid HTML foundation to build on. There are downsides too, but more on that later.
 
-With our template selected, we selected another strong foundation: Github Pages. This enables us to take advantage of the speed of Github's platform and keep our entire site in a git repository. Working with Jekyll makes life super-simple, much more so than our previous Wordpress platform, and all our blogposts are stored a simple markdown files.
+With our template selected, we selected two strong foundations: Github Pages and Jekyll. This enables us to take advantage of the speed of Github's platform and keep our entire site in a git repository with Jekyll's powerful static site generator. 
+
+We are massive fans and advocates of Github and use it everyday when we build software for our Clients. We use it to maintain sensible software source control, backups and management of everything around software development. 
+Yes, its a wee bit geeky, we admit it and its not something we would encourage everyone to do, but we thought, what the heck lets do this just because we can.
+
+Working with Jekyll makes life super-simple, much more so than our previous Wordpress platform, and all our blogposts are stored a simple markdown files.
 
 We pulled apart our stock template and fitted Jekyll around it. With our freshly written content, we were already getting close to a beta version.
 
