@@ -34,17 +34,43 @@ Ok, but not great. Time to go to work.
 
 ### Remove the extra JS
 
+Pretty straightforward this one - removed 422 lines of JavaScript, some of which wasn't being executed. I also want to minimise the number of HTTP downloads we're doing for JavaScript and try to minimise the payload for those HTTP requests. I knocked up a quick shell script to do this:
 
+{% highlight sh %}
+# Remove existing build artifacts
+rm ./assets/js/build.*
 
+# Combine all of our JS files into build.js, maintaining the include order
+cat ./assets/js/jquery.js ./assets/js/jquery.sticky.js ./assets/js/jquery.quote.rotator.min.js ./assets/js/neatshow.js ./assets/js/common.js > ./assets/js/build.js
+
+# Use yui compressor to make a mini version
+java -jar ~/Downloads/yuicompressor-2.4.8.jar --verbose -o ./assets/js/build.min.js ./assets/js/build.js
+{% endhighlight %}
+
+With that, I now only include build.min.js from our master template and we've achieved our goal.
 
 ### Optimise CSS
 
+I'm a fan of the SASS SCSS syntax for authoring CSS, and though the new site doesn't fully utilise it yet, I'd like to do so in the future. For now, we'll just use its ability to import other SCSS files and its compressor to produce a minified CSS file. So as well as our main site CSS, our styles.scss file includes some imports:
+
+{% highlight css %}
+@import "font-awesome";
+@import "google-fonts";
+@import "syntax";
+{% endhighlight %}
+
+Then I compile it into a compressed CSS file with:
+
+{% highlight sh %}
+sass assets/scss/style.scss assets/css/style.css  --style compressed
+{% endhighlight %}
+
+Again, we've got a single compressed file which we now include from our master template.
 
 ### Optimise our images
+
+If you're a Mac user, take a look at [ImageOptim](http://imageoptim.com/) which bundles some great optimisation tools with a very simple UI to compress your image. By running our PNG and JPEG images through ImageOptim we saved a whopping.
 
 Now let's have a look.
 
 Much better! Github Pages doesn't give us the fine control over some caching options that we might like but overall we're significantly faster than we were.
-
-This is the sort of thing that every responsible developer should be looking at. 
-
