@@ -485,6 +485,11 @@ legend span {
 	width: 300px; 
 }
 
+.container .one-half.column { 
+	width: 450px; 
+}
+
+
 .container .two-thirds.column { 
 	width: 620px; 
 }
@@ -1363,6 +1368,7 @@ nav select {
 	display: block;
 	position: relative;
 	max-width: 100%;
+	width: 100%;
 }
 
 .video-frame {
