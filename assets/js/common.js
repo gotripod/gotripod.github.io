@@ -34,9 +34,10 @@ jQuery(document).ready(function ($) {
 	});
 
 	$('#header-navigation select').change(function() {
-		var val = this.value;
+		var val = this.value,
+			isBlog = window.location.pathname.indexOf('blog.html') > -1;
 
-		if(val === '/blog.html') {
+		if(val === '/blog.html' || isBlog) {
 			window.location.replace(val);
 		} else {
 			scrollTo(val);
