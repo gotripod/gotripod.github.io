@@ -171,9 +171,9 @@
 
 	$('#header-navigation select').change(function() {
 		var val = this.value,
-			isBlog = window.location.pathname.indexOf('blog.html') > -1;
+			isHome = window.location.pathname === '/' ;
 
-		if(val === '/blog.html' || isBlog) {
+		if(val === '/blog.html' || !isHome) {
 			window.location.replace(val);
 		} else {
 			scrollTo(val);
