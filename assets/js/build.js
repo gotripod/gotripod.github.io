@@ -172,10 +172,10 @@
 	$('#header-navigation select').change(function() {
 		var val = this.value;
 
-		if(val.indexOf('.') === -1) {
-			scrollTo(val);
+		if(val === '/blog.html') {
+			window.location.replace(val);
 		} else {
-			window.location.href = val;
+			scrollTo(val);
 		}
 	});
 });
