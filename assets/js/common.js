@@ -39,7 +39,7 @@ jQuery(document).ready(function ($) {
 		if(val.indexOf('.') === -1) {
 			scrollTo(val);
 		} else {
-			window.location.href = val;
+			window.location.replace(val);
 		}
 	});
 });
