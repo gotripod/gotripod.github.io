@@ -1811,8 +1811,13 @@ nav select {
 	line-height: 1.2;
 }
 
+
 /* Tablet Portrait size to standard 960 (devices and browsers) */
-@media only screen and (min-width: 768px) and (max-width: 1280px) {}
+@media only screen and (min-width: 768px) and (max-width: 1280px) {
+	.blog-items {
+		margin:0 20px 0 20px;
+	}
+}
 
 /* All Mobile Sizes (devices and browser) */
 @media only screen and (max-width: 768px) {
