@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Bloomin useful Gems
+title: Bloomin Useful Gems
 published: true
 ---
 
