@@ -24,7 +24,7 @@ Exactly! It means that we can run Ruby code on every stack frame in our browser!
 
 Installation is straightforward. *Because of the nature of this gem, please be sure that you add the following entries to the development group!*
 
-{% highlight bash %} 
+{% highlight bash %}
 group :development do
 	gem "better_errors"
 	gem "binding_of_caller"
