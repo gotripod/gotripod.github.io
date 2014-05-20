@@ -70,7 +70,7 @@ Installation is easy (like for almost every gem!) - you just need to add a brake
 
 After installation the brakeman command is available in your system path, so you can then run **brakeman** in your application root directory.
 
-![Brakeman, image from the rails-breakman site](/assets/img/blog/tab-completion.png "Brakeman, image from the rails-breakman site")
+![Brakeman, image from the rails-breakman site](/assets/img/blog/brakeman "Brakeman, image from the rails-breakman site")
 
 I want to cover couple useful types of vulnerabilities recognized by the **Brakeman** scanner:
 
