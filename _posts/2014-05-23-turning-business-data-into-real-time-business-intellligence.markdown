@@ -1,10 +1,10 @@
 ---
 layout: post
 published: true
-title: Turning Buiness Data Into Real-Time Business Intellligence
+title: Turning Business Data Into Real-Time Business Intellligence
 ---
 
-##Turning Buiness Data Into Real-Time Business Intellligence
+##Turning Business Data Into Real-Time Business Intellligence
 
 
 Ok, so we know access to business intelligence is crucial to all those involved in making a business successful.
