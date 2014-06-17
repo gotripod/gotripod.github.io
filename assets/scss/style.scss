@@ -564,7 +564,11 @@ legend span {
 @media only screen and (min-width: 768px) and (max-width: 959px) {
     
     .container { 
-    	width: 768px 
+    	width: 768px;
+    }
+
+    #blog .container {
+    	width: 708px;
     }
     
     .container .column,
