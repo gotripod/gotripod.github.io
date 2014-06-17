@@ -537,6 +537,9 @@ legend span {
   .container .one-third.column {
     width: 236px; }
 
+  .container .one-half.column {
+    width: 360px; }
+
   .container .two-thirds.column {
     width: 492px; }
 
@@ -614,6 +617,7 @@ legend span {
   .container .fifteen.columns,
   .container .sixteen.columns,
   .container .one-third.column,
+  .container .one-half.column,
   .container .two-thirds.column {
     width: 260px; }
 
@@ -663,6 +667,7 @@ legend span {
   .container .fifteen.columns,
   .container .sixteen.columns,
   .container .one-third.column,
+  .container .one-half.column,
   .container .two-thirds.column {
     width: 300px; } }
 /* Clearing (Clearfix)
