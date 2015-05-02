@@ -1,8 +1,8 @@
 ---
-title: Agri Assist
-intro: here
+title: Web Based Carbon Footprint Calculator
+intro: Agri Assist approached us to build a comprehensive carbon footprint calculator to be used by hundreds of farmers across the UK. We created a cloud solution to help understand the impact of a variety of farming methods and produce a Carbon Trust certified report containing at-a-glance results
 client: Dairy Crest Direct
-quote: 'insert here'
+quote: 
 layout: case_study
 ---
 
