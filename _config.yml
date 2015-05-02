@@ -1,6 +1,11 @@
 name: Go Tripod WWW
 markdown: redcarpet
-pygments: true
+highlighter: pigments
 permalink: :title
 gems:
   - jekyll-redirect-from
+collections:
+  case_studies:
+    layout: master
+    output: true
+    permalink: /case-studies/:path/

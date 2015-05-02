@@ -1,0 +1,20 @@
+---
+layout: master
+---
+
+<header id="header-global" class="blog" role="banner">
+    {% include header-nav.html %}
+</header>
+
+<section id="blog">
+    <div class="container">
+        <div class="icon-holder blog"><i class="icon-briefcase"></i></div>
+
+        <h1>{{page.title}}: Case Study</h1>
+        {{ content }}
+
+    </div>
+
+    {% include createsend.html %}
+
+</section>
