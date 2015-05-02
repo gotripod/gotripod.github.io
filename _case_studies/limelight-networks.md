@@ -11,4 +11,4 @@ We worked on two applications for LLNW and both enabled them to visualise and ma
 
 We also created a graphical interface to display the hierarchy of Limelight's organisation; by building a custom drawing solution we were able to support older browsers and display an interactive, zoomable representation of any part of Limelight's international operation.
 
-Go Tripod were selected for the task due to our extensive Ext JS knowledge, and we combined that with some bespoke code to build applications that were both usable *and* useful
+Go Tripod were selected for the task due to our extensive Ext JS knowledge, and we combined that with some bespoke code to build applications that were both usable *and* useful!
