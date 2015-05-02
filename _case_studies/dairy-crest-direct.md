@@ -1,3 +1,11 @@
+---
+title: Agri Assist
+intro: here
+client: Dairy Crest Direct
+quote: 'insert here'
+layout: case_study
+---
+
 Dairy Crest Direct (DCD) offshoot Agri assist aims to provide DCD farmers with added-value services to improve the network as a whole. After working with DCD in the past, Go Tripod was approached to implement an online carbon footprint tool which was to be accredited by the Carbon Trust.
 
 The brief stated that farmers should be able to complete a survey about various aspects of their farm and farming practises. A wizard-style interface was to be combined with clear visual cues, enabling farmers with little experience of web applications to easily complete the survey. After all data is collected, reporting tools were to be provided alongside an attractive at-a-glance overview of the farm's carbon footprint.
