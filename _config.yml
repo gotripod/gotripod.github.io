@@ -1,6 +1,6 @@
 name: Go Tripod WWW
 markdown: redcarpet
-highlighter: pigments
+highlighter: pygments
 permalink: :title
 gems:
   - jekyll-redirect-from
