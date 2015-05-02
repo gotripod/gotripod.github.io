@@ -1,6 +1,7 @@
 ---
-title: 'TDK Lambda'
-intro: 'TDK Lambda case study'
+title: Content Management System
+client: TDK-Lambda
+intro: Go Tripod's team have worked with TDK-Lambda for several years, building a strategic partnership to provide hosted software solutions.
 layout: case_study
 ---
 
