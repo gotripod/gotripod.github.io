@@ -9,3 +9,6 @@ collections:
     layout: master
     output: true
     permalink: /case-studies/:path/
+sass:
+    sass_dir: assets/_sass
+    style: :compressed
