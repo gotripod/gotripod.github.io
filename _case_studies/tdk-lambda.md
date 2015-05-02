@@ -1,7 +1,7 @@
 ---
 title: Content Management System
 client: TDK-Lambda
-intro: Go Tripod's team have worked with TDK-Lambda for several years, building a strategic partnership to provide hosted software solutions.
+intro: TDK-Lambda required a platform to help the various country managers that operate the country specific web presence for TDK-Lambda. The platform should assist with brand and product consistency and also provide a level of autonomy at a localised level
 layout: case_study
 ---
 
