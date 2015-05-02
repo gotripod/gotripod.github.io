@@ -12,3 +12,5 @@ Best Practice Online are a leading content provider for the legal sector and the
 
 LegalRSS allows Joe to manage content and subscribers and publish content to their network of partner websites.
 Integration with is easy for LegalRSS’ users who simply need to install a few lines of Javascript on their website to immediately start displaying up to date news content. Advanced users can can also use the standard RSS or ATOM protocols to be fed content directly from Best Practice Online Ltd.
+
+This bespoke Ruby on Rails system has been in constant development for several years, and our iterative approach to its development has allowed Legal RSS to continually improve its feature set to meet customer expectations.
