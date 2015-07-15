@@ -1,47 +1,203 @@
 ---
 ---
 
+@import 'meyer';
+
+@function space($factor) {
+    @return (15px * $factor);
+}
+
+@mixin vertical-center {
+    display: flex;
+    box-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $top $left $blur $color;
+    -moz-box-shadow:inset $top $left $blur $color;
+    box-shadow:inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
+
+$gt-flair: #fffc00;
+
 body {
-    margin: 0;
     font-family: 'Museo Sans';
     color: #333;
+    background: black;
+    -webkit-font-smoothing: antialiased;
 }
 
 h1, h2 {
     text-align: center;
+    letter-spacing: -1.3px;
 }
 
 
 h1 {
-    color: #E47C14;
+    color: $gt-flair;
+    font-size: 42px;
+}
+
+h2 {
+    font-size: 32px;
 }
 
 select {
     display: none;
 }
 
+header {
+    @include vertical-center;
+    margin: 0 auto 0 auto;
+    width: 720px;
+    height: 100vh;
+
+
+    h1 {
+        margin-bottom: space(1);
+        line-height: space(3);
+    }
+
+    h2 {
+            line-height: space(2.5);
+            color: white;
+    }
+
+    em {
+        text-decoration: underline;
+    }
+}
+
+.badge {
+      display: block !important;
+  text-align: center;
+  border: 7px solid #FFF;
+  font-size: 70px;
+  padding: 2px;
+  color: #FFFC00;
+  z-index: 0;
+  border-radius: 100%;
+  width: 92px;
+  height: 92px;
+  margin-right: space(1);
+  position: relative;
+}
+
+//   border-bottom: medium double #DDD;
 
 #main-navigation {
-    background: #333;
-    text-align: center;
-    padding: 30px 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    text-align: right;
 
     ul {
-        padding: 0;
+        margin: space(2);
+        padding: space(1) 0 0 0;
     }
 
     li {
         display: inline-block;
-        margin: 0 10px;
-    }
+        margin: 0 space(0.5);
 
-    a {
-        font-size: 18px;
-        color: white;
-        text-decoration: none;
+        a {
+            font-size: 18px;
+            color: white;
+            letter-spacing: -0.5px;
+            text-decoration: none;
+        }
     }
 }
 
+.background {
+     background-image: url(/assets/img/Cosmos03.jpg); background-size: cover; height: 100vh; width: 100%; position: absolute; top: 0; z-index: -6;
+     opacity:0.71;
+}
+
 #go-tripod-logo {
-    display: block;
+    -webkit-filter: brightness(200%);
+    float: left;
+    margin: space(2);
+    img {
+        width: 200px;
+    }
+}
+
+.blurb {
+    display: flex;
+    width: 610px;
+    margin: 0 auto;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+#introduction {
+    position: relative;
+    box-shadow: inset 0 8px 8px -8px rgba(0,0,0,0.8);
+
+    .badge {
+        font-size: 65px;
+        i {
+            margin-left: -8px;
+            margin-top: 7px;
+        }
+    }
+
+    * {
+
+    }
+
+    h3 {
+        color: $gt-flair;
+        font-size: 42px;
+        text-align: left;
+        margin-bottom: 10px;
+    }
+
+    p {
+        color: white;
+        font-size: 32px;
+        line-height: 30px;
+        text-align: left;
+    }
+
+    .grid {
+        display: flex;
+        flex-wrap: wrap;
+        margin: -(space(3)) 0 0 -(space(3));
+        justify-content: center;
+    }
+
+    .grid-cell {
+        padding: space(3) 0 0 space(3);
+        a { display: block; width: 300px; }
+        img {
+            display: block;
+            width: 300px;
+            height: 185px;
+            @include box-shadow(0px, 0px, 10px, rgba(255, 255, 255, 0.8));
+            border: 3px double #fff;
+            border-radius: 2px;
+        }
+    }
+
+
+    background: radial-gradient(ellipse at center 110px, #4D769E 0%, #8ABBD7 69%, #D9ECF5 100%);
+
+
+    .focus-image {
+        float: left;
+    }
+
+    padding-bottom: 200px;
+    text-align: left !important;
 }

@@ -2,7 +2,8 @@
 title: Responsive Cloud Website
 intro: We're helping the multi-billion pound commercial shipping industry go paperless with the Falmor Laytime Cloud, a responsive B2B solution to bring consistency and fluidity to a rapidly modernising arena.
 client: 'Falmor/G-Ports'
-quote: 
+quote:
+screenshot: falmor-shot.png
 layout: case_study
 ---
 

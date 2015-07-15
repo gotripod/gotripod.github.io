@@ -3,6 +3,7 @@ title: JavaScript Development
 client: Limelight Networks
 intro: When they needed a rich, JavaScript-powered means of visualising their organisation, Limelight Networks came to us.
 layout: case_study
+screenshot: tdk-shot.png
 ---
 
 As JavaScript and Ext JS experts, Go Tripod are often asked to build dynamic web applications for a range of clients, and when one of the world's largest content delivery companies came knocking, we were excited by the opportunity to shine.

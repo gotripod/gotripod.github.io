@@ -1,7 +1,8 @@
 ---
 title: iOS App and Backend
 client: Sacrifice & Give
-quote: 
-intro: 
+quote:
+intro:
 layout: case_study
+screenshot: lrss-shot.png
 ---

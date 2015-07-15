@@ -3,6 +3,7 @@ title: Bespoke Content Delivery
 intro: LegalRSS was developed to solve a problem at large on the internet. How do you keep the content on them up to date and relevant? LegalRSS allows Best Practice to manage content and subscribers and publish content to their network of partner websites
 layout: case_study
 quote: Go Tripod are a very professional company, we worked closely together throughout our project they gave me the confidence to let them run the process from start to finish... Great job
+screenshot: lrss-shot.png
 ---
 
 When Joe Reevy from Best Practice Online Ltd needed a content distribution platform to allow him to push up to date news to his client base of legal firm he came to us.

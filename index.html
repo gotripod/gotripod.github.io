@@ -4,35 +4,34 @@ title: Bespoke Software Development in Cornwall - Go Tripod
 redirect_from: /contact.html
 ---
 
-{% include home-header.html %}
+{% include header-nav.html %}
 
-<div id="main">
+<header>
+	<h1>Great things start like this: <br/>You talk, we listen.</h1>
+	<h2>We're UK-based software developers who focus on <em>users</em> and the project, not on code and techology.</h2>
+</header>
 
-	<section id="introduction">
-	
-		<div class="container">
-		
-			<div class="icon-holder intro">
-				<i class="icon-trophy" style="color:#e47c14 !important;"></i>
-			</div>
-		
-			<h1>Elegant software solutions that solve your complex business problems</h1>
-			
-			<p>We are a Cornwall, UK based software business. We solve business challenges all over the globe using software technologies as our tools. Our combined experience is honed to provide you with great web and mobile software solutions that solves your most complex business problems. </p>
-		</div>
-	
-	</section>
+<div class="header-background-image background"></div>
 
-	{% include quotes-one.html %}
 
-	{% include latest-work.html %}
+<section id="introduction">
+    <div class="blurb">
+        <div class="badge"><i class="fa fa-rocket"></i></div>
+        <div>
+            <h3>
+                Problems? Solved.
+            </h3>
+            <p>Have a look at some case studies.</p>
+        </div>
+    </div>
 
-	{% include our-clients.html %}
-
-	{% include services.html %}
-
-	{% include quotes-two.html %}
-
-	{% include meet-the-team.html %}
-
-</div>
+    <div class="grid">
+        {% for study in site.case_studies %}
+        <div class="grid-cell">
+            <a href="{{study.url}}">
+                <img src="/assets/img/{{study.screenshot}}" alt="{{study.client}}">
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</section>

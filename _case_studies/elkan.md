@@ -1,7 +1,8 @@
 ---
 title: Android Tablet App
 client: Elklan
-quote: 
-intro: 
+quote:
+intro:
 layout: case_study
+screenshot: tdk-shot.png
 ---
