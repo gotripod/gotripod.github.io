@@ -25,7 +25,7 @@ Every consultancy would love to have a SAAS to bring in some recurring revenue. 
 
 ## Learning
 
-In the past year we've been working with React and React Native, both of which have given us important tools to improve the quality and reduce the cost of our work. In the next year, we'll continue to look at the latest technologies and strengthen our knowledge of our existing box of tricks, and the GTBDD will give us more of an opportunity to do so.
+In the past year we've been working with [React](https://facebook.github.io/react/) and [React Native](https://facebook.github.io/react-native/), both of which have given us important tools to improve the quality and reduce the cost of our work. In the next year, we'll continue to look at the latest technologies and strengthen our knowledge of our existing box of tricks, and the GTBDD will give us more of an opportunity to do so.
 
 ## Fun & Games
 
