@@ -21,7 +21,7 @@ We use tools like [Basecamp](http://www.basecamp.com), [Slack](http://www.slack.
 
 ## Products
 
-Every consultancy would love to have some SAAS to bring in recurring revenue. We'll be examining the industries we know best and hitting the whiteboard to see if there are any tasty opportunities for us to launch a new product in 2016.
+Every consultancy would love to have some [SAAS](https://en.wikipedia.org/wiki/Software_as_a_service) to bring in recurring revenue. We'll be examining the industries we know best and hitting the whiteboard to see if there are any tasty opportunities for us to launch a new product in 2016.
 
 ## Learning
 
