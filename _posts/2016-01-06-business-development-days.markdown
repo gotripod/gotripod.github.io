@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: Go Tripod's Business Development Days
 ---
 In years past, Google was renowned for its 20% time - a developer was allowed to allocate one day a week to working on ideas that weren't necessarily related to their normal Googley projects. Some of these ideas were even spun off into new properties for Google, and some were incorporated into existing internal and public-facing projects.
