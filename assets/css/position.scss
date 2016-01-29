@@ -201,8 +201,8 @@ nav {
 	width: 100%;
 	/*min-height:600px;*/
 	background: white;
-	margin-bottom: 75px;
-	padding:45px 20px 0 20px;
+	padding:45px 20px 75px 20px;
+	box-sizing: border-box;
 	}
 
 /* font awesome over-rides start */
