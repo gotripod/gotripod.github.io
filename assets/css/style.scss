@@ -31,7 +31,7 @@ $gt-flair: #fffc00;
 
 body {
     font-family: 'Museo Sans';
-    color: #333;
+    color: #fff;
     background: black;
     -webkit-font-smoothing: antialiased;
 }
@@ -188,6 +188,7 @@ font-size: 65px;
 
 #people {
     padding-bottom: 200px;
+    color: #333;
 
     img         { width: 90px; }
     p           { width: 500px; }
@@ -247,6 +248,7 @@ font-size: 65px;
     }
 
     #services {
+        color: #333;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -282,6 +284,26 @@ font-size: 65px;
             margin-left: 10px;
             margin-right: 10px;
         }
+    }
+}
+
+#contact {
+    .badge {
+        i {
+            font-size: 58px;
+        }
+    }
+
+    form {
+        width: 400px;
+    }
+
+    input, textarea {
+        margin-bottom: 22px;
+        color: #000;
+        width: 100%;
+        padding: 10px;
+        font-size: 15px;
     }
 }
 

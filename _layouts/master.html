@@ -1,39 +1,90 @@
 <!DOCTYPE html>
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<meta charset="utf-8">
-	<title>{{page.title}}</title>
-	<meta name="description" content="Bespoke software development for web apps and mobile apps">
-	<meta name="keywords" content="Mobile apps, web apps, web applications, Cornwall, Devon, Somerset">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Go Tripod</title>
     <link rel="shortcut icon" href="/assets/img/favicon.png">
+    <link href="//fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet" type="text/css" />
+    <link href="//fonts.googleapis.com/css?family=Roboto:900,400,100italic,100,300italic,300,400italic,500italic,500,700italic,700,900italic" rel="stylesheet" type="text/css" />
+    <link href="//fonts.googleapis.com/css?family=Quicksand:700" rel="stylesheet" type="text/css" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/css/global.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/position.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/cols.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/type.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/page_home.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery.cycle2.min.js"></script>
+    <script type="text/javascript" src="/assets/jquery.cycle2.center.min.js"></script>
 
-    <!--[if lt IE 9]>
-    <script src="assets/js/html5shiv.js"></script>
-    <![endif]-->
+
 
 </head>
-<body>
-    {{content}}
+
+<body class="home">
+
+<!--wrapper starts-->
+<div id="wrapper">
+
+    {% include header.html %}
+
+    <!--intro start-->
+    <div id="intro" class="home">
+        <div class="cycle-slideshow" data-cycle-center-horz="true" data-cycle-fx="fade" data-cycle-timeout="2000" data-cycle-slides="> h1" >
+            <h1 data-cycle-timeout="10">&nbsp;</h1>
+            <h1>We make great software</h1>
+            <h1>For companies big &amp; small</h1>
+            <h1>We offer three core products</h1>
+            <h1>We use six simple steps</h1>
+            <h1>We've got great clients</h1>
+            <h1>And we've built cool stuff</h1>
+            <h1>Come meet our team</h1>
+            <h1>Let's have a chat</h1>
+        </div>
+        <div id="groupshot">
+            <img src="/assets/img/groupshot.png" width="632" height="271" alt="" />
+        </div>
+
+    </div>
+    <!--intro start-->
+    <!--journey-bar starts-->
+    <div id="journey-bar">
+        <div class="arrow">
+            <a href="about-us/">See what we do</a>
+        </div>
+    </div>
+    <!--journey-bar ends-->
+    <!--body starts-->
+    <div id="body">
+
+        {{ content }}
+
+        <a href="make-contact/">
+            <div class="panel-container right home">
+                <div class="panel">
+                     <span class="fa-stack fa-4x icon">
+                        <i class="fa fa-circle fa-stack-3x gt-white"></i>
+                        <i class="fa fa-circle-thin fa-stack-2x gt-black"></i>
+                        <i class="fa fa-bullhorn fa-stack-1x gt-black"></i>
+                    </span>
+                    <span class="text">
+                        Got an idea for a project?<br />
+                        <span>Get in touch : 0845 475 2487</span><br />
+                    </span>
+                </div>
+            </div>
+        </a>
 
 
 
-    <script src="/assets/js/build.min.js"></script>
-    <script type="text/javascript">
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-9912208-1']);
-        _gaq.push(['_trackPageview']);
 
-        (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-    </script>
+    </div>
+    <!--body ends-->
+
+    {% include footer.html %}
+
+</div>
+<!--wrapper ends-->
+
 </body>
-
 </html>

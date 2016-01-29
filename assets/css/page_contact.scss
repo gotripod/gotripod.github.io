@@ -1,0 +1,68 @@
+@charset "utf-8";
+
+
+/* CONTACT-US ==================================================== */
+
+	#body.contact label {
+		display: none;
+		}
+	#body.contact input[type="text"] {
+		background-color: #efefef;
+		border:none;
+		display:block;
+		width:92%;
+		height:39px;
+		margin-bottom:1em;
+		padding:2%;
+		font-family:"Raleway";
+		font-size:1.1em;
+		}
+	#body.contact textarea {
+		background-color: #efefef;
+		border:none;
+		display:block;
+		width:92%;
+		height:239px;
+		margin-bottom:1em;
+		padding:2%;
+		font-family:"Raleway";
+		font-size:1.1em;
+		}
+	#body.contact input[type="button"] {
+		background-color: #216382;
+		color:#fff;
+		text-transform:uppercase;
+		border:none;
+		display:block;
+		width:187px;
+		height:45px;
+		float:right;
+		margin-right:4%;
+		font-family:"Roboto";
+		font-weight:700;
+		font-size:1.25em;
+		cursor: pointer;
+		}
+	#body.contact input[type="button"]:hover {
+		background-color: #000;
+		color:#fff;
+		}
+
+
+	#body.contact iframe { float:right; }
+
+	#body.contact #details 		{ margin-left: 4%; }
+	#body.contact #details img 	{ margin: 1.5em 0 1em 0; }
+	#body.contact #details p 	{ text-transform:uppercase; font-family:"roboto"; font-size:1em; font-weight:700; margin: 1.75em 0; line-height:1.5em;}
+	#body.contact #details a 	{ 
+		text-decoration:none;
+		color:#216382;
+		}
+	#body.contact #details a:hover 	{ 
+		background:#000;
+		color:#FFF;
+		}
+
+
+
+
