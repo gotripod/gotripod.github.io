@@ -28,58 +28,7 @@
 
     {% include header.html %}
 
-    <!--intro start-->
-    <div id="intro" class="home">
-        <div class="cycle-slideshow" data-cycle-center-horz="true" data-cycle-fx="fade" data-cycle-timeout="2000" data-cycle-slides="> h1" >
-            <h1 data-cycle-timeout="10">&nbsp;</h1>
-            <h1>We make great software</h1>
-            <h1>For companies big &amp; small</h1>
-            <h1>We offer three core products</h1>
-            <h1>We use six simple steps</h1>
-            <h1>We've got great clients</h1>
-            <h1>And we've built cool stuff</h1>
-            <h1>Come meet our team</h1>
-            <h1>Let's have a chat</h1>
-        </div>
-        <div id="groupshot">
-            <img src="/assets/img/groupshot.png" width="632" height="271" alt="" />
-        </div>
-
-    </div>
-    <!--intro start-->
-    <!--journey-bar starts-->
-    <div id="journey-bar">
-        <div class="arrow">
-            <a href="about-us/">See what we do</a>
-        </div>
-    </div>
-    <!--journey-bar ends-->
-    <!--body starts-->
-    <div id="body">
-
-        {{ content }}
-
-        <a href="make-contact/">
-            <div class="panel-container right home">
-                <div class="panel">
-                     <span class="fa-stack fa-4x icon">
-                        <i class="fa fa-circle fa-stack-3x gt-white"></i>
-                        <i class="fa fa-circle-thin fa-stack-2x gt-black"></i>
-                        <i class="fa fa-bullhorn fa-stack-1x gt-black"></i>
-                    </span>
-                    <span class="text">
-                        Got an idea for a project?<br />
-                        <span>Get in touch : 0845 475 2487</span><br />
-                    </span>
-                </div>
-            </div>
-        </a>
-
-
-
-
-    </div>
-    <!--body ends-->
+    {{ content }}
 
     {% include footer.html %}
 
