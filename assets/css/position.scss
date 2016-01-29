@@ -12,41 +12,39 @@
 /* HEADER ======================================================== */
 
 
-#header-wrapper {
-	background-color:#161515;
-	height:auto;
+header {
+	padding: 30px;
+	img {
+		-webkit-filter: brightness(200%);
 	}
-#header {
-	/*display:block;*/
-	margin: 0 auto;
-	max-width:381px;
-	width:30%;
-	}
-	#header img {
-		width:100%;
-		height:auto;
-		margin-bottom:25px;
-		}
+}
+
+.background {
+     background-color: black; background-image: url(/assets/img/Cosmos03.jpg);
+     background-size: cover; height: 600px; width: 100%; position: absolute; top: 0; z-index: -6;
+     opacity:0.71;
+}
 
 
 /* NAV =========================================================== */
 
 
-#nav {
-	background-color:#161515;
+nav {
+	font-family: 'Museo Sans';
+	float: right;
 	/*height:30px;*/
 	/*position: fixed; z-index: 10000;*/
 	}
-	#nav ul {
+	nav ul {
 		text-align: center;
 		list-style-type:none;
 		margin:0;
 		padding:0;
 		}
-	#nav li {
+	nav li {
 		display:inline-block;   /*comment this line out to make vertical nav for small screens? */
 		}
-	#nav li:hover {
+	nav li:hover {
 		background-color:#216382;
 		-webkit-box-shadow: 0px 6px 0px 0px rgba(255, 255, 0, 1);
 		-moz-box-shadow:    0px 6px 0px 0px rgba(255, 255, 0, 1);
@@ -56,27 +54,44 @@
 		-o-transition: all 0.3s ease;
 		transition: all 0.3s ease;
 		}
-	#nav li.selected {
+	nav li.selected {
 		background-color:#216382;
 		}
-	#nav a {
+	nav a {
 		display:inline-block;
-		text-transform:uppercase;
+		letter-spacing: -0.5px;
 		padding:9px 12px;
 		color:#FFFFFF;
 		text-decoration:none;
-		font-size:75%;
+		font-size: 18px;
 		}
 
 
 /* INTRO ========================================================= */
 
 #intro {
-	background:#216382 url("/assets/img/bg_intro.gif") repeat-x right top;
+	xbackground:#216382 url("/assets/img/bg_intro.gif") repeat-x right top;
 	height:307px;
 	position:relative;
 	z-index: -1;
+
+	p {
+		font-size: 32px;
+		text-align: center;
+		line-height: 37.5px;
+		font-weight: bold;
+		letter-spacing: -1.3px;
+		color:#FFF;
+		position:absolute;
+		top:175px;
+		width:800px;
+		margin:0 auto;
+		left:0;right:0;
+		margin-top: -30px;
 	}
+
+}
+
 	#intro.home { height:457px; }
 
 	#intro #groupshot {
@@ -98,22 +113,14 @@
 		margin-bottom: 25px;
 		margin-top: 0;
 		padding-top:73px;
-		font-family: "Roboto";
+		font-family: "Museo Sans";
 		font-weight: 700;
 		font-style: normal;
-		text-transform:uppercase;
-		color:#ffffff;
+
+		color:#fffc00;
 		/*text-shadow: 0px 0px 1px rgba(239, 239, 239, 1);*/
 		text-align:center;
 		width: 100%;
-		}
-	#intro p {
-		color:#FFF;
-		position:absolute;
-		top:175px;
-		width:625px;
-		margin:0 auto;
-		left:0;right:0;
 		}
 
 
@@ -185,12 +192,17 @@
 
 
 /* BODY ========================================================== */
+#body > * {
+	margin: 0 auto;
+	max-width:980px;
+}
 
 #body {
+	width: 100%;
 	/*min-height:600px;*/
-	max-width:980px;
-	margin:45px auto 75px auto;
-	padding:0 20px;
+	background: white;
+	margin-bottom: 75px;
+	padding:45px 20px 0 20px;
 	}
 
 /* font awesome over-rides start */

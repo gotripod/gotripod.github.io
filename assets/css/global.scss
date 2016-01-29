@@ -8,7 +8,8 @@
 body {
 	min-width: 480px;
 	margin: 0 0 0 0;
-	background-color: #ffffff;
+	background-color: black;
+	-webkit-font-smoothing: antialiased;
 	/*font-size: 75%;	*/
 	}
 
@@ -37,3 +38,18 @@ a.banner-link {
 .pull-left {float:left;}
 .pull-right {float:right;}
 .caps {text-transform:uppercase;}
+
+.badge {
+	display: block !important;
+	text-align: center;
+	border: 7px solid #FFF;
+	font-size: 65px;
+	padding: 2px;
+	color: #FFFC00;
+	z-index: 0;
+	border-radius: 100%;
+	width: 92px;
+	height: 92px;
+	margin-right: space(1);
+	position: relative;
+}
