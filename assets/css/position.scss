@@ -3,7 +3,7 @@
 
 @charset "utf-8";
 /* CSS Document */
-
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
 
 #wrapper {
 }
@@ -30,7 +30,7 @@ header {
 
 
 nav {
-	font-family: 'Museo Sans';
+	font-family: 'Montserrat';
 	float: right;
 	/*height:30px;*/
 	/*position: fixed; z-index: 10000;*/
@@ -59,7 +59,7 @@ nav {
 		}
 	nav a {
 		display:inline-block;
-		letter-spacing: -0.5px;
+		letter-spacing: -1px;
 		padding:9px 12px;
 		color:#FFFFFF;
 		text-decoration:none;
@@ -113,7 +113,7 @@ nav {
 		margin-bottom: 25px;
 		margin-top: 0;
 		padding-top:73px;
-		font-family: "Museo Sans";
+		font-family: "Montserrat";
 		font-weight: 700;
 		font-style: normal;
 
@@ -303,7 +303,7 @@ nav {
 			font-size:175%;
 			line-height:150%;
 			color:#666;
-			font-family: Calibri, "Raleway";
+			font-family: 'Montserrat';
 			font-weight: 600;
 			font-style:italic;
 			}
