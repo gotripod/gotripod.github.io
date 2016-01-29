@@ -244,7 +244,10 @@ nav {
 	width:86%;
 	margin:0 auto;
 	}
-	#accordion div.reveal 		{padding:45px 0 0 0;}
+	#accordion div.reveal 		{
+		padding:45px 0 0 0; overflow: hidden;
+		transition: height 0.5s;
+	}
 	#accordion div.reveal.inset {padding:45px 37px 0 37px;}
 	#accordion div.reveal p 	{margin-top:0; margin-bottom:45px;}
 	#accordion div.reveal img 	{margin-bottom:25px;}

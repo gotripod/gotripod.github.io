@@ -50,5 +50,12 @@
 </div>
 <!--wrapper ends-->
 
+
+{% if page.bottom_js %}
+    {% for js_file in page.bottom_js %}
+    <script src="/assets/js/{{ js_file }}.js" type="text/javascript"></script>
+    {% endfor %}
+{% endif %}
+
 </body>
 </html>
