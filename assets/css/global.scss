@@ -4,6 +4,9 @@
 @charset "utf-8";
 /* CSS Document */
 
+* {
+	box-sizing: border-box;
+}
 
 body {
 	min-width: 480px;
