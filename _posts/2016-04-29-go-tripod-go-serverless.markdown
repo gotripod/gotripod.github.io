@@ -175,7 +175,7 @@ FBSDKAccessToken.getCurrentAccessToken((token) => {
 });
 ```
 
-You'll need to have created a Federated Identity Pool and set up Facebook as an Authentication Provider. Populated the `awsIdentityPoolId` and `awsRegion` variables accordingly and the above code can be run at any point after a successful login.
+You'll need to have created a Federated Identity Pool and set up Facebook as an Authentication Provider. Populate the `awsIdentityPoolId` and `awsRegion` variables accordingly and the above code can be run at any point after a successful login.
 
 Visit the Identity Pool in the AWS Console and you'll see a dataset called "testDataset" with a single key/value entry.
 
