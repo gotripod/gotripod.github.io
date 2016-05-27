@@ -13,7 +13,7 @@
 
 
 header {
-	padding: 30px;
+	padding: 20px;
 	img {
 		-webkit-filter: brightness(200%);
 	}
@@ -21,7 +21,7 @@ header {
 
 .background {
      background-color: black; background-image: url(/assets/img/Cosmos03.jpg);
-     background-size: cover; height: 600px; width: 100%; position: absolute; top: 0; z-index: -6;
+     background-size: cover; height: 600px; width: 100%; position: absolute; top: 90px; z-index: -6;
      opacity:0.71;
 }
 
@@ -38,14 +38,14 @@ nav {
 	nav ul {
 		text-align: center;
 		list-style-type:none;
-		margin:0;
+		margin:30px 0 0 0;
 		padding:0;
 		}
 	nav li {
 		display:inline-block;   /*comment this line out to make vertical nav for small screens? */
 		}
 	nav li:hover {
-		background-color:#216382;
+		background-color:#0b1d3f;
 		-webkit-box-shadow: 0px 6px 0px 0px rgba(255, 255, 0, 1);
 		-moz-box-shadow:    0px 6px 0px 0px rgba(255, 255, 0, 1);
 		box-shadow:         0px 6px 0px 0px rgba(255, 255, 0, 1);
@@ -91,11 +91,11 @@ nav {
 	}
 
 }
-
-	#intro.home { height:427px; }
+	#intro.home { height:307px; }
+	/* #intro.home { height:427px; } */
 
 	#intro #groupshot {
-	/*	display:block;*/
+	/*	display:block; */
 		width:30%;
 		}
 	#intro img {
@@ -204,6 +204,7 @@ nav {
 	background: white;
 	padding:45px 20px 75px 20px;
 	box-sizing: border-box;
+	font-family: "Raleway";
 	}
 
 /* font awesome over-rides start */
