@@ -4,6 +4,14 @@
 @import 'meyer';
 @import 'base';
 
+.mob {
+    display: none;
+}
+
+.yus {
+    display: none;
+}
+
 .container {
     position: absolute;
     width: 1000px;

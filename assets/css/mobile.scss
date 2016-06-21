@@ -8,7 +8,30 @@
     margin: 5%;
 }
 
+.mobile-header {
+    position: relative;
+
+    .fa-phone {
+        position: absolute;
+        left: 5%;
+        top: 0;
+    }
+
+    .fa-bars {
+        position: absolute;
+        right: 5%;
+        top: 0;
+    }
+}
+
+.yus {
+    width: 6em;
+    margin: 5% auto;
+    display: block;
+}
+
 nav {
+    display: none;
     position: absolute;
     top: 0;
     right: 0;
