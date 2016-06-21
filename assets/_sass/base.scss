@@ -1,0 +1,57 @@
+$yellow: #fffc00;
+
+body {
+    background: #000 url(/assets/img/cosmos-dim.jpg) no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    font-family: 'Montserrat';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    height: 100%;
+}
+
+a { color: white; }
+
+nav {
+    font-size: 160%;
+
+    a {
+        text-decoration: none;
+        line-height: 160%;
+    }
+}
+
+h1 {
+    font-size: 230%;
+    font-weight: 600;
+    letter-spacing: -1px;
+    font-style: normal;
+    color: $yellow;
+    width: 100%;
+    margin: 20px 0 43px 0;
+}
+
+.home {
+    .tag {
+        font-size: 180%;
+        font-weight: 600;
+    }
+
+    .cta {
+        margin-top: 30px;
+    }
+
+    .action {
+        font-size: 170%;
+        font-weight: bold;
+        margin-top: 30px;
+
+        a {
+            color: $yellow;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+    }
+}

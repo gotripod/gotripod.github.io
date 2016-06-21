@@ -1,0 +1,30 @@
+---
+---
+
+@import 'meyer';
+@import 'base';
+
+.container {
+    position: absolute;
+    width: 1000px;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+}
+
+.journey-bar {
+    img {
+        -webkit-filter: brightness(200%);
+        width: 300px;
+        margin-bottom: 20px;
+    }
+
+    float: left;
+    width: 44%;
+}
+
+.home {
+    float: right;
+    width: 54%;
+    text-align: left;
+}

@@ -4,22 +4,13 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Go Tripod</title>
     <link rel="shortcut icon" href="/assets/img/favicon.png">
-    <link href="//fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet" type="text/css" />
+    <!-- <link href="//fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet" type="text/css" />
     <link href="//fonts.googleapis.com/css?family=Roboto:900,400,100italic,100,300italic,300,400italic,500italic,500,700italic,700,900italic" rel="stylesheet" type="text/css" />
     <link href="//fonts.googleapis.com/css?family=Quicksand:700" rel="stylesheet" type="text/css" />
+     -->
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="/assets/css/global.css" rel="stylesheet" type="text/css" />
-    <link href="/assets/css/position.css" rel="stylesheet" type="text/css" />
-    <link href="/assets/css/cols.css" rel="stylesheet" type="text/css" />
-    <link href="/assets/css/type.css" rel="stylesheet" type="text/css" />
-    <link href="/assets/css/page_team.css" rel="stylesheet" type="text/css" />
-    <link href="/assets/css/page_work-home.css" rel="stylesheet" type="text/css" />
-    <link href="/assets/css/page_contact.css" rel="stylesheet" type="text/css" />
-    <link href="/assets/css/contact-form.css" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
-    <script type="text/javascript" src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
-    <script type="text/javascript" src="/assets/js/jquery.cycle2.min.js"></script>
-    <script type="text/javascript" src="/assets/js/jquery.cycle2.center.min.js"></script>
+    <link rel="stylesheet" media="screen and (min-device-width: 1001px)" href="/assets/css/main.css" />
+    <link rel='stylesheet' media="screen and (max-device-width: 1000px)" href="/assets/css/mobile.css" />
 
     {% if page.custom_css %}
         {% for stylesheet in page.custom_css %}
@@ -35,22 +26,9 @@
 
 </head>
 
-<body class="home">
+<body>
 
-<!--wrapper starts-->
-<div id="wrapper">
-
-    {% include header.html %}
-
-    <div class="background"></div>
-
-    {{ content }}
-
-    {% include footer.html %}
-
-</div>
-<!--wrapper ends-->
-
+{{ content }}
 
 {% if page.bottom_js %}
     {% for js_file in page.bottom_js %}
