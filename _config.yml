@@ -1,5 +1,4 @@
 name: Go Tripod WWW
-markdown: redcarpet
 highlighter: pygments
 permalink: :title
 gems:
