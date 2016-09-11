@@ -124,3 +124,9 @@ PLATFORMS
 DEPENDENCIES
   github-pages
   jekyll-redirect-from
+
+RUBY VERSION
+   ruby 2.2.1p85
+
+BUNDLED WITH
+   1.13.0
