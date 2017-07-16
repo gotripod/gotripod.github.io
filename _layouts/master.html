@@ -10,12 +10,11 @@
 
     <style type="text/css">
         {% capture include_to_scssify %}
-            {% include_relative assets/css/style.css %}
+            {% include sass/style.scss %}
         {% endcapture %}
         {{ include_to_scssify | scssify }}
     </style>
 
-    <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="shortcut icon" href="/assets/img/favicon.png">
 
     <!--[if lt IE 9]>
