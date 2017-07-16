@@ -1,5 +1,5 @@
 name: Go Tripod WWW
-highlighter: pygments
+highlighter: rouge
 permalink: :title
 gems:
   - jekyll-redirect-from
